@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuous Learning</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        .nav-link {
+            border-left: 5px solid rgb(64, 0, 128);
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div id="sidebar" class="col-lg-2 sidebar">
+                <button id="sidebarToggle" class="btn btn-primary d-lg-none" aria-label="Toggle navigation menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <ul class="nav flex-column">
+                    <li class="nav-item"><span class="nav-link" style="color:red;font-size: 24px; font-weight: 900;">Advance Java</span></li>
+                    <li class="nav-item"><a class="nav-link" href="#introduction">Introduction</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#JDBC">JDBC - Architecture</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#program">Program on JDBC</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#data-types">Data Types</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#literals-methods">Literals, Types of Methods</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#onstructor">Constructor</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#big-int">BigInteger, BigDecimal</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-10">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-right pt-3 pb-2 mb-3">
+                    <a href="index.html" class="btn btn-primary btn-back">Back</a>
+                    <div class="d-flex align-items-center">
+                        <a href="index.html" class="text-decoration-none text-dark me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:sudheerbabudoddakula@gmail.com" class="text-decoration-none text-dark me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                              </svg>
+                        </a>
+                        <span class="text-dark" style="font-weight: bold;">Sudheer Babu Doddakula</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <section id="introduction">
+                        <h1>Introduction of Advance Java</h1><hr>
+                        <p>Advance Java - </p>
+                       
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="JDBC-architecture">
+                        <h2>JDBC - Architecture</h2><hr>
+                        <p>JDBC Drivers is classified into 4 Types</p>
+                        <ol>
+                            <li>JDBC - ODBC Bridge Driver - thick driver --> obselete(Depricated)</li>
+                            <li>Native-API Driver - thick driver --> obselete</li>
+                            <li>Network Protocol Driver - thin driver</li>
+                            <li>Native Driver - thin driver</li>
+                        </ol>
+
+                        <h5>Steps to Connect Database</h5>
+                        <ol>
+                            <li>Loading the Driver</li>
+                            <li>Connection establsih</li>
+                            <li>Statement</li>
+                            <li>ResultSet</li>
+                            <li>Close Connection</li>
+                        </ol>
+
+                        <h5>Statements in JDBC</h5>
+                        <ol>
+                            <li>statement() - Used for static SQL queries.</li>
+                            <li>PrepatedStatement() - Used for precompiled SQL queries, with parameterized queries to avoid SQL injection.</li>
+                            <li>CallableStatement() - Used to execute stored procedures.</li>
+                        </ol>
+
+                        <h5>Executing Queries in JDBC</h5>
+                        <ol>
+                            <li>executeUpdate() - used for insert, update, delete</li>
+                            <li>executeQuery() - used for select - returns ResultSet</li>
+                            <li>execute() - used for DDL - returns boolean</li>
+                        </ol>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="program">
+                        <h2>Program on JDBC</h2><hr>
+                        <pre>package com.tests;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+                            
+ public class Xample {
+    public static void main(String[] args) {
+        StudentData s = new StudentData();
+            s.selectStudentbyId(3);
+    }
+}
+                            
+class DBConnection{
+    Connection con;
+    public Connection getConnection() {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/b48", "root", "root");
+        } catch (Exception e) {
+            System.out.println(e);;
+        }
+        return con;
+    }
+}
+                            
+interface StudentInterface{
+    public void insertStudent();
+    public void updateStudent();
+    public void selectStudentbyId(int x);
+    public void selectStudent();
+}
+                            
+class StudentData implements StudentInterface{
+    DBConnection db = new DBConnection();
+        public void insertStudent() {
+            try{
+                Connection con = db.getConnection();
+                PreparedStatement ps = con.prepareStatement("insert into Student(sname,marks) values(?,?)");
+                ps.setString(1,"Sudheer");
+                ps.setInt(2, 98);
+                int n = ps.executeUpdate();
+                if(n>0) {
+                    System.out.println(n + "(s) rows inserted");
+                }else {
+                    .out.println("Something went wrong!");
+                }
+                con.close();
+            }catch(Exception e) {
+                System.out.println(e);
+            }
+        }
+                            
+        public void updateStudent() {
+            try{
+                Connection con = db.getConnection();
+                PreparedStatement ps = con.prepareStatement("update Student set marks=? where sno=?)");
+                ps.setString(1,"Sudheer");
+                ps.setInt(2, 120);
+                int n = ps.executeUpdate();
+                if(n>0) {
+                    System.out.println(n + "(s) rows Updated");
+                }else {
+                    System.out.println("Something went wrong!");
+                }
+                con.close();
+            }catch(Exception e) {
+                System.out.println(e);
+            }
+        }
+                            
+        public void selectStudentbyId(int x) {
+            try{
+                Connection con = db.getConnection();
+                ps = con.prepareStatement("select * from Student where sno=?");
+                ps.setInt(1,x);
+                ResultSet rs = ps.executeQuery();
+                while(rs.next()) {
+                    System.out.println(rs.getInt(1)+ ":"+rs.getString(2)+":"+rs.getInt(3));;
+                }
+                con.close();
+            }catch(Exception e) {
+                System.out.println(e);
+            }
+        }
+            
+        public void selectStudent() {
+            try{
+                Connection con = db.getConnection();
+                ps = con.prepareStatement("select * from Student");
+                ResultSet rs = ps.executeQuery();
+                while(rs.next()) {
+                    System.out.println(rs.getInt(1)+ ":"+rs.getString(2)+":"+rs.getInt(3));;
+                }
+                con.close();
+            }catch(Exception e) {
+                System.out.println(e);
+            }
+        }</pre>
+                    </section>
+                </div>
+                
+                <div class="content">
+                    <section id="data-types">
+                        <h2>Data Types</h2><hr>
+                        
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="literals-methods">
+                        <h2>Literals </h2><hr>
+                        
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="constructor">
+                        <h2>Constructor</h2><hr>
+                        
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="big-int">
+                        <h2>Constructor</h2><hr>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="arrays">
+                        <h2>Arrays</h2><hr>
+                      
+                    </section>
+                </div>
+            </div>
+        </div>
+        <button id="backToTop" class="btn btn-primary" aria-label="Back to top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+            </svg>
+        </button>
+    </div>
+    
+    <script src="script.js">
+
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+</body>
+</html>
+
+
+
+

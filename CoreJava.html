@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuous Learning</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        .nav-link {
+            border-left: 5px solid green;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="sidebar" class="col-lg-2 sidebar">
+                <button id="sidebarToggle" class="btn btn-primary d-lg-none" aria-label="Toggle navigation menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <ul class="nav flex-column">
+                    <li class="nav-item"><span class="nav-link" style="color:red;font-size: 24px; font-weight: 900;">Core Java</span></li>
+                    <li class="nav-item"><a class="nav-link" href="#introduction">Introduction</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Jvm-architecture">JVM Architecture</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#identifiers-keywords">Identifiers, Keywords</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#data-types">Data Types</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#literals-methods">Literals, Types of Methods</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#onstructor">Constructor</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#big-int">BigInteger, BigDecimal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#arrays">Arrays</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#access-modifiers">Access Modifiers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#oops">OOPS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#string-handling">String Handling</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#file-handling">File Handling</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#exception-handling">Exception Handling</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#collections">Collections</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cursors">Cursors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#inner-classes">Inner Classes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#multithreading">Multithreading</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#java-8-features">Java 8 Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Interview- Questions">Interview Questions</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-10">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-right pt-3 pb-2 mb-3">
+                    <a href="index.html" class="btn btn-primary btn-back">Back</a>
+                    <div class="d-flex align-items-center">
+                        <a href="index.html" class="text-decoration-none text-dark me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:sudheerbabudoddakula@gmail.com" class="text-decoration-none text-dark me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                              </svg>
+                        </a>
+                        <span class="text-dark" style="font-weight: bold;">Sudheer Babu Doddakula</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <section id="introduction">
+                        <h1>Introduction of Core Java</h1><hr>
+                        <p>Java is a popular programming language that was developed by Sun Microsystems in 1995. It is a statically-typed, object-oriented programming language. Java is designed to be easy to learn and use, making it suitable for beginners and experienced developers alike.</p>
+                        <p>Java has several key features that make it a popular choice for developing large-scale applications:</p>
+                        <ul>
+                            <li>Simple</li>
+                            <li>Object-oriented programming</li>
+                            <li>Platform Independent</li>
+                            <li>Secure</li>
+                            <li>Robust</li>
+                            <li>Multithreading</li>
+                            <li>Dynamic</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="Jvm-architecture">
+                        <h2>Jvm-architecture</h2><hr>
+                        <p>It has 3 stages</p>
+                        <ol>
+                            <li>Class Loader Subsystem</li>
+                            <ul>
+                                <li>Loading</li>
+                                <ul>
+                                    <li>Bootstrap Class Loader Subsystem</li>
+                                    <ul>
+                                        <li>It loads the bootstrap class in class path</li>
+                                    </ul>
+                                    <li>Extension Class Loader Subsystem</li>
+                                    <ul>
+                                        <li>It loads the class in external jar file</li>
+                                    </ul>
+                                    <li>Application Class Loader Subsystem</li>
+                                    <ul>
+                                        <li>It loads the application class in class path</li>
+                                    </ul>
+                                </ul>
+                                <li>Linking</li>
+                                <ul>
+                                    <li>Prepare</li>
+                                    <li>Verify</li>
+                                    <li>Resolve</li>
+                                </ul>
+                                <li>Intilization</li>
+                            </ul>
+                            <li>Memory Management</li>
+                            <ul>
+                                <li>Method Area</li>
+                                <li>Heap Area</li>
+                                <li>Stack Area</li>
+                                <li>PC Registers</li>
+                                <li>Navtive Stack Area</li>
+                            </ul>
+                            <li>Execution Engine</li>
+                            <ul>
+                                <li>Interpreter</li>
+                                <li>JIT Compiler</li>
+                                <li>Garbage Collection</li>
+                            </ul>
+                        </ol>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="identifiers-keywords">
+                        <h2>Identifiers</h2><hr>
+                        <p>Identifier is a word given to the variable, method, class, interface etc.</p>
+                        <h6>Rules of Identifiers</h6>
+                        <ol>
+                            <li>Name cannot start with numbers, we can start with letters A to Z or a to z or "$","_".</li>
+                            <li>Case sensitive</li>
+                            <li>No special characters are allowed except "$","_".</li>
+                            <li>Must not be a keyword</li>
+                        </ol>
+                        <h2>Keywords</h2><hr>
+                        <p>Keywords are reserved words in java which cannot be used as Identifiers.</p>
+                        <p>There are 50 Keywords in Java</p>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <ol>
+                                        <li>package</li>
+                                        <li>import</li>
+                                        <li>class</li>
+                                        <li>interface</li>
+                                        <li>new</li>
+                                        <li>instance of</li>
+                                        <li>extends</li>
+                                        <li>implements</li>
+                                        <li>enum</li>
+                                        <li>void</li>
+                                        <li>return</li>
+                                        <li>this</li>
+                                        <li>super</li>
+                                        <li>assert</li>
+                                    </ol>
+                                </div>
+                                <div class="col-lg-3">
+                                    <ol start="15">
+                                        <li>public</li>
+                                        <li>private</li>
+                                        <li>protected</li>
+                                        <li>default</li>
+                                        <li>static</li>
+                                        <li>synchronized</li>
+                                        <li>strictfp</li>
+                                        <li>abstract</li>
+                                        <li>volatile</li>
+                                        <li>transient</li>
+                                        <li>native</li>
+                                        <li>final</li>
+                                    </ol>
+                                </div>
+                                <div class="col-lg-3">
+                                    <ol start="27">
+                                        <li>byte</li>
+                                        <li>short</li>
+                                        <li>int</li>
+                                        <li>long</li>
+                                        <li>float</li>
+                                        <li>double</li>
+                                        <li>char</li>
+                                        <li>boolean</li>
+                                        <li>try</li>
+                                        <li>catch</li>
+                                        <li>final</li>
+                                        <li>throw</li>
+                                        <li>throws</li>
+                                    </ol>
+                                </div>
+                                <div class="col-lg-3">
+                                    <ol start="40">
+                                        <li>if</li>
+                                        <li>else</li>
+                                        <li>for</li>
+                                        <li>while</li>
+                                        <li>do</li>
+                                        <li>switch</li>
+                                        <li>case</li>
+                                        <li>break</li>
+                                        <li>continue</li>
+                                        <li>goto</li>
+                                        <li>const</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                
+                <div class="content">
+                    <section id="data-types">
+                        <h2>Data Types</h2><hr>
+                        <p>There are 3 data types</p>
+                        <ol>
+                            <li>Primitive Data Types</li>
+                            <ol>
+                                <li>byte --> 1byte(8bits) --> -128 to 127 --> 0</li>
+                                <li>short --> 2bytes(16bits) --> -32768 to 32767 --> 0</li>
+                                <li>int --> 4bytes(32bits) --> -2147483648 to 2147483647 -->0</li>
+                                <li>long --> 8bytes(64bits) --> -9223372036854775808 to 9223372036854775807 --> 0</li>
+                                <li>float --> 4bytes(32bits) --> -3.4e38 to 3.4e38 -->0.0</li>
+                                <li>double --> 8bytes(64bits) --> -1.7e308 to 1.7e308 -->0.0 </ol>/li>
+                                <li>char --> 2bytes(16bits) --> 0 to 65535 --> (space)</li>
+                                <li>boolean --> 1byte(8bits) --> true or false --> false</li>
+                            </ol>
+                            <li>Oject Data Types</li>
+                            <ol>
+                                <li>predefined Data Types</li>
+                                <ul>
+                                    <li>string</li>
+                                    <li>string Buffer</li>
+                                    <li>string Builder</li>
+                                    <li>Thread</li>
+                                    <li>Exception</li>
+                                </ul>
+                                <li>User Defined Data Types</li>
+                                <ul>
+                                    <li>student</li>
+                                    <li>employee</li>
+                                    <li>customer</li>
+                                    
+                                </ul>
+                                <li>Wrapper object Data Types</li>
+                                <ul>
+                                    <li>Byte</li>
+                                    <li>Short</li>
+                                    <li>Integer</li>
+                                    <li>Long</li>
+                                    <li>Float</li>
+                                    <li>Double</li>
+                                    <li>Character</li>
+                                    <li>Boolean</li>
+                                </ul>
+                            </ol>
+                        </ol>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="literals-methods">
+                        <h2>Literals </h2><hr>
+                        <p>Constant varbale with the value assigned to it</p>
+                        <p>There are 6 types of literals are there:</p>
+                        <ol>
+                            <li>Integral Literals</li>
+                            <p>we can do decimal to octal, decimal to hexadecimal</p>
+                            <ol>
+                                <li>byte</li>
+                                <li>short</li>
+                                <li>int</li>
+                                <li>long</li>
+                            </ol>
+                            <li>Floating Point Literals</li>
+                            <p>we can't do decimal to octal, decimal to hexadecimal when we have decimal point</p>
+                            <ol>
+                                <li>float</li>
+                                <li>double</li>
+                            </ol>
+                            <li>Character Literals</li>
+                            <p>we can't do decimal to octal, decimal to hexadecimal</p>
+                            <p>we can convert char into 3 types:</p>
+                            <ol>
+                                <li>characters --> 'a'</li>
+                                <li>Unicode --> '\u0000'</li>
+                                <li>ASCII --> 65</li>
+                            </ol>
+                            <li>Boolean Literals</li>
+                            <p>we can write only true or false</p>
+                            <li>String Literals</li>
+                            <p>we can write in single or double quotes with set of characters</p>
+                            <li>Null Literals</li>
+                            <p>null is a keyword in Java that represents absence of any object</p>   
+                        </ol>
+                        
+                        <h2>Types of Methods </h2><hr>
+                        <p>There are 2 types of methods based on nature</p>
+                        <ul>
+                            <li>Static Method</li>
+                            <p>static method belongs to class and can be accessed by class name</p>
+                            <li>Instance Method</li>
+                            <p>non-static method belongs to object and can be accessed by object reference</p>
+                        </ul>
+                        <p>There are 4 types of methods based on return type</p>
+                        <ol>
+                            <li>void without args</li>
+                            <li>void with args</li>
+                            <li>return without args</li>
+                            <li>return with args</li>
+                        </ol>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="constructor">
+                        <h2>Constructor</h2><hr>
+                        <p>It is a special type of method without return type and name must be same as class name.</p>
+                        <p>Constructor is used to initialize the object.</p>
+                        <p>5 types of constructors</p>
+                        <ol>
+                            <li>Default Constructor</li>
+                                <p>If there is no constructor in class, then JVM will provide default constructor. we can't create object without default constructor.</p>
+                            <li>No arg Constructor</li>
+                                <p>It does not have any parameter and it is called when object is created.</p>
+                            <li>Parametrized Constructor</li>
+                                <p>It has one or more parameters and it is called when object is created.</p>
+                            <li>Copy Constructor</li>
+                                <p>If we create an object using another object in same class, then it is called copy constructor.</p>
+                            <li>constructor chaining</li>
+                                <p>It is used to call one constructor from another constructor using this(), super().</p>
+                        </ol>
+                        <h5>Rules of Constructor</h5>
+                        <ol>
+                            <li></li>
+                        </ol>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="big-int">
+                        <h2>BigInteger</h2><hr>
+                        <p>we can use BigInteger class to store large values, even larger than long data type.
+                             it takes data like strings in double quotes. we can do all arithmetic operations on it like: add, subtract, multiply, divide, mod, min, max, remainder etc.</p>
+
+                        <h2>BigDecimal</h2><hr>
+                        <p>same as BigInteger,but for decimal values. it takes data like strings in double quotes.
+                             we can do arithmetic operations on it like: add, subtract, multiply, remainder. we can't do divide, mod operations. </p>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="arrays">
+                        <h2>Arrays</h2><hr>
+                        <p>Arrays are index based, with Collection of homogenous data elements which are stored in single variable with a fixed size.</p>
+                        <h5>why arrays</h5>
+                        <p>For continous memory allocation, Readability, Represent data in a structured way</p>
+                        <h5>Types of Arrays</h5>
+                        <ol>
+                            <li>one-dimensional Array</li>
+                            <pre>int[] arr = {1,2,3,4,5,6,7};
+for(int a:arr){
+    System.out.println(a);
+}
+Output: 1,2,3,4,5,6,7</pre><p>Or</p><pre>int[] arr = new int[3];
+arr[0]=1;
+arr[1]=2;
+arr[2]=3;    
+for(int a:arr){
+    System.out.println(a);
+}
+Output: 1,2,3</pre>
+                            <li>two-dimensional Array</li>
+                            <pre>int[][] arr = {{1,2,3},{4,5,6}};
+for(int[] ar: arr){
+    for(int a:ar){
+        System.out.println(a);
+    }
+}
+Output: 1 2 3
+        4 5 6</pre><p>Or</p><pre>int[][] arr = new int [2][2];
+arr[0][0] = 1;
+arr[0][1] = 2;
+arr[1][0] = 3;
+arr[1][1] = 4;
+for(int[] ar: arr){
+    for(int a:ar){
+        System.out.println(a);
+    }
+}
+Output: 1 2
+        3 4</pre>
+                            <li>Multi-dimensional Array</li>
+                            <pre>int[][][] arr = {{{1,2,3},{4,5,6},{7,8,9}}};
+for(int[][] ar : arr){
+    for(int[]a : ar){
+        for(int b : a){
+            System.out.println(b);
+        }
+    }
+}
+Output: 1 2 3
+        4 5 6
+        7 8 9</pre><p>Or</p><pre>int[][][] arr= new int [2][2][2];
+arr[0][0][0] = 1;
+arr[0][0][1] = 2;
+arr[0][1][0] = 3;
+arr[0][1][1] = 4;
+arr[1][0][0] = 5;
+arr[1][0][1] = 6;
+arr[1][1][0] = 7;
+arr[1][1][1] = 8;
+for(int[][] ar : arr){
+    for(int[]a : ar){
+        for(int b : a){
+            System.out.println(b);
+        }
+    }
+}
+Output: 1 2
+        3 4
+        5 6
+        7 8</pre>
+                        </ol>
+                        <h5>Jagged Array</h5>
+                        <p>Jagged array is an array of arrays.</p>
+                        <pre>int[][] arr = new int[2][];
+arr[0] = new int[2];
+arr[1] = new int[3];
+a[0][0]=0;
+a[0][1]=1;
+a[1][0]=4;
+a[1][1]=5;
+a[1][2]=6;
+for(int[] ar: arr){
+    for(int a:ar){
+        System.out.println(a);
+    }
+}
+Output: 0 1
+        4 5 6</pre>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="access-modifiers">
+                        <h2>Access Modifiers</h2><hr>
+                        <ol>
+                            <li>public</li>
+                            <ul type="disc">
+                                <li>We can access the data members within the project.</li>
+                            </ul>
+                            <li>private</li>
+                            <ul type="disc">
+                                <li>We can access the data members within the class Only.</li>
+                            </ul>
+                            <li>protected</li>
+                            <ul type="disc">
+                                <li>We can access the data members within the package and class that import parent class.</li>
+                            </ul>
+                            <li>default</li>
+                            <ul type="disc">
+                                <li>We can access the data members within the package.</li>
+                            </ul>
+                            <li>static</li>
+                            <ul type="disc">
+                                <li> It is used to access the variables, methods, and blocks without creating an object of the class.</li>
+                            </ul>
+                            <li>synchronized</li>
+                            <ul type="disc">
+                                <li>In multithreading, it is used to wait the second thread until the first thread finishes its execution.<li>
+                            </ul>
+                            <li>strictfp</li>
+                            <ul type="disc">
+                                <li>It is used to get the get the correct floating points each time. </li>
+                            </ul>
+                            <li>abstract</li>
+                            <ul type="disc">
+                                <li>When we declare a class as abstract, we cannot create an object of that class.</li>
+                                <li>when we declare a method as abstract, we cannot implement that method.</li>
+                            </ul>
+                            <li>volatile</li>
+                            <ul type="disc">
+                                <li>Volatile means keep on changing.</li>
+                            </ul>
+                            <li>transient</li>
+                            <ul type="disc">
+                                <li>transient is a keyword to secure data when the objects are serailzed.</li>
+                            </ul>
+                            <li>native</li>
+                            <ul type="disc">
+                                <li>it provides the implementation to java from another language like c,c++.</li>
+                            </ul>
+                            <li>final</li>
+                            <ul type="disc">
+                                <li>when we declare a class as final, we cannot extends that class.</li>
+                                <li>when we declare a method as final, we cannot override that method.</li>
+                                <li>when we declare a variable as final, we cannot change the value of that variable.</li>
+                            </ul>
+                        </ol>
+                        
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="oops">
+                        <h2>Object-Oriented Programming system (OOPS)</h2><hr>
+                        <p>Main concepts of OOPS:</p>
+                        <ol>
+                            <li>Encapsulation --> security and modularity</li>
+                            <li>Abstraction --> security</li>
+                            <li>Inheritance --> reusability</li>
+                            <li>Polymorphism --> flexibility</li>
+                        </ol>
+                        <h2>Encapsulation</h2><hr>
+                        <p>Encapsulation is a mechanism of bundling data and methods that work on that data within a single unit.</p>
+
+                        <h2>Abstraction</h2><hr>
+                        <p>Abstraction is a process of hiding implementation and showing the specifications.</p>
+                        <h5>abstract</h5>
+                        <p>when abstract is given to class then it must only have one abstract method (without any implementation) and any number of default or other methods.</p>
+                        <p>we cannot create an object of abstract class</p>
+
+                        <h5>Interface</h5>
+                            <p>Interface is a collection of abstract methods</p>
+                            <p>There are 3 types of Interfaces:</p>
+                            <ol>
+                                <li>Normal Interface --> all types of methods like static, private etc..</li>
+                                <li>Marker Interface --> no methods -->only specialization</li>
+                                <li>Functional Interface -->one abstract methods and other methods are default/static</li>
+                            </ol>
+                        
+                        <h2>Inheritance</h2><hr>
+                        <p>Inheritance is a mechanism by which one class acquires the properties (methods and fields) of another class.</p>
+                        <p> We can achieve inheritance by using extends and new keywords.</p>
+                        <p>extends --> is-a relationship</p>
+                        <p>new --> has-a relationship</p>
+                        <h5>Types of Inheritance:</h5>
+                        <ol>
+                            <li>Single Inheritance --> only one parent class</li>
+                            <li>multiple Inheritance --> more than one parent</li>
+                            <li>Multilevel Inheritance --> multiple levels of inheritance</li>
+                            <li>Hierarchical Inheritance --> multiple child classes</li>
+                            <li>Hybrid Inheritance --> combination of single, multiple, and hierarchical inheritance</li>
+                            <li>cyclic Inheritance --> parent and child are same --> it is not possible</li>
+                        </ol>
+
+                        <h2>Polymorphism</h2><hr>
+                        <p>Polymorphism is a feature in which a variable of a subclass can refer to an object of its superclass.</p>
+                        <p>Types of Polymorphism:</p>
+                        <ul>
+                            <li>Method Overloading --> same method name with different parameters in same class</li>
+                            <li>Method Overriding --> same method name with same parameters in different classes</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="string-handling">
+                        <h2>String Handling</h2><hr>
+                        <h5>String --> is immutable</h5>
+                        <p>We can create in two ways : </p>
+                        <ul>
+                            <li> String str = "Hello World!";</li>
+                            <li> String str = new String("Hello World!");</li>
+                        </ul>
+
+                        <h5>Some methods of string</h5>
+                        <ol>
+                            <li>length() --> returns length of string</li>
+                            <li>charAt(index) --> returns char at given index</li>
+                            <li>concat(string) --> returns new string by concatenating given string with current string</li>
+                            <li>substring(start, end) --> returns substring from given start index to end index</li>
+                            <li>replace(oldChar, newChar) --> returns new string by replacing old character with new character</li>
+                            <li>toLowerCase() --> returns new string in lowercase</li>
+                            <li>toUpperCase() --> returns new string in uppercase</li>
+                            <li>trim() --> returns new string by removing leading and trailing white spaces</li>
+                            <li></li>
+                        </ol>
+
+                        <h5>String Buffer</h5>
+                        <p>String Buffer is mutable, so we can perform modifications like add, remove, and replace operations. It is synchronized, so it is thread-safe.</p>
+
+                        <h5>String Builder</h5>
+                        <p>String Builder is also mutable, but it is not synchronized. so it is not thread-safe.</p>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="file-handling">
+                        <h2>File Handling</h2><hr>
+                        <p>Content for File Handling...</p>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="exception-handling">
+                        <h2>Exception Handling</h2><hr>
+                        <p>Exception --> is an event that occurs during the execution of a program due to bad logic or unexpected input.</p>
+                        <p>Types of Exceptions:</p>
+                        <ol>
+                            <li>Checked Exceptions --> the exceptions that are checked by the compiler are checked exceptions.</li>
+                            <ul style="list-style-type:disc;">
+                                <li>IOException</li>
+                                <li>SQLException</li>
+                                <li>ClassNotFoundException</li>
+                                <li>FileNotFoundException</li>
+                                <li>Interrupted Exception</li>
+                            </ul>
+                            <li>Unchecked Exceptions --> the exceptions that are not checked by the compiler are unchecked exceptions.</li>
+                            <ul style="list-style-type:disc;">
+                                <li>ArithmeticException</li>
+                                <li>ArrayIndexOutOfBoundsException</li>
+                                <li>NullPointerException</li>
+                                <li>ClassCastException</li>
+                                <li>IllegalArgumentException</li>
+                                <li>StringIndexOutofBoundsException</li>
+                                <li>NoSuchElementException</li>
+                                <li>ConcurrentModificationException</li>
+                                <li>IllegalThreadstateException</li>
+                            </ul>
+                        
+                            <h5>Error</h5>
+                            <p>Errors --> errors occurs due to resources problems like out of memory, stack overflow etc.</p>
+                            <ul type="disc">
+                                <li>OutOfMemoryError</li>
+                                <li>StackOverflowError</li>
+                            </ul>
+
+                            <p> We can handle exceptions using try-catch-finally blocks.</p>
+                            <ol>
+                                <li>try block --> we can write the problematic code in this block.</li>
+                                <li>catch block --> whatever exception occurs in the try block, catch block will catch it.</li>
+                                <li>finally block --> this block will execute whether exception occurs or not.</li>
+                                <li>throw --> we can throw an exception explicitly. </li>
+                                <li>throws --> exceptions are thrown to satisfy the compiler</li>
+                            </ol>
+
+                            <p>We have 2 ways to handle exceptions:</p>
+                            <ul type="disc">
+                                <li>by using try-catch-finally blocks --> For Graceful Termination of Program</li>
+                                <li>by using throw keyword --> Gives Abnormal Termination of Program</li>
+                            </ul>
+                            <code>Try-catch-finally is the best way to handle exceptions</code>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="collections">
+                        <h2>Collections</h2><hr>
+                        <p>There are 15 interfaces in collections</p>
+                        <ol>
+                            <li>Collections</li>
+                            <li>List</li>
+                            <li>Queue</li>
+                            <li>Deque</li>
+                            <li>Set</li>
+                            <li>SortedSet</li>
+                            <li>NavigaleSet</li>
+                            <li>Map</li>
+                            <li>SortedMap</li>
+                            <li>NavigableMap</li>
+                            <li>Enumeration -->Cursor</li>
+                            <li>Iterator --> Universal Cursor</li>
+                            <li>ListIterator -->Cursor</li>
+                            <li>Comparable</li>
+                            <li>Comparator</li>
+                        </ol>
+
+                        <h5>Collections</h5>
+                        <p>Collection is parent interface of list, set, queue, dequeue, sortedSet, navigableSet.</p>
+                        <p>Classes of collections: ArrayList, LinkedList, Vector, Stack, PriorityQueue, HashSet, TreeSet, LinkedHashSet etc..</p>
+                        <h5>Methods of Collection</h5>
+                        <ul>
+                            <li>add(Object obj) --> adds the object to the collection</li>
+                            <li>remove(Object obj) --> removes the object from the collection</li>
+                            <li>contains(Object obj) --> checks whether the collection contains the object</li>
+                            <li>size() --> returns the number of elements in the collection</li>
+                            <li>clear() --> removes all elements from the collection</li>
+                            <li>isEmpty() --> checks whether the collection is empty</li>
+                        </ul>
+
+                        <h5>List</h5>
+                        <p>List is an interface that extends Collection and provides additional methods to handle elements in specific order.</p>
+                        <p>Classes of list: ArrayList, LinkedList, Vector, Stack, CopyOnWriteArrayList etc..</p>
+                        <ul>
+                            <li>List allows duplicate elements.</li>
+                            <li>List allows homogenous and heterogeneous elements.</li>
+                            <li>List allows null values any number of times.</li>
+                            <li>Insertion order preserved.</li>
+                        </ul>
+                        <h5>Methods of List</h5>
+                        <ul>
+                            <li>add (E e) --> adds the element at the end of the list</li>
+                            <li>remove(int index) --> removes the element at the given index</li>
+                            <li>contains (Object obj) --> checks whether the list contains the object</li>
+                            <li>indexOf(Object obj) --> returns the index of the first occurrence of the object in the list</li>
+                            <li>lastIndexOf(Object obj) --> returns the index of the last occurrence of the object in the list</li>
+                            <li>get(int index) --> returns the element at the given index</li>
+                            <li>set(int index, E e) --> replaces the element at the given index with the new element</li>
+                            <li>addFirst(E e) --> adds the element at the beginning of the list</li>
+                            <li>addLast(E e) --> adds the element at the end of the list</li>
+                            <li>removeFirst() --> removes the element at the beginning of the list</li>
+                            <li>removeLast() --> removes the element at the end of the list</li>
+                            <li>iterator() --> returns an iterator over the elements in the list</li>
+                            <li>listIterator() --> returns a list iterator over the elements in the list</li>
+                            <li>subList(int fromIndex, int toIndex) --> returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive</li>
+                            <li>toArray() --> returns an array containing all the elements in the list</li>
+                            <li>sort(Comparator<? super E> c) --> sorts the elements in the list in ascending order according to the natural ordering of their corresponding elements, using the provided comparator</li>
+                            <li>hashCode () --> returns the hash code value for this list</li>
+                            <li>equals(Object obj) --> compares this list with the specified object for equality</li>
+                            <li>toString() --> returns a string representation of the list</li>
+                            <li>clone() --> creates and returns a shallow copy of this list</li>
+                            <li>remove() --> removes the first occurrence of the specified element from this list, if it is present</li>
+                            <li>size() --> returns the number of elements in the list</li>
+                        </ul>
+
+                        <h5>Queue</h5>
+                        <p>Queue is an interface that extends Collection and adds additional methods to handle elements in <code>FIFO (First-In-First-Out)</code> order.</p>
+                        <p>Classes of queue: PriorityQueue, LinkedList, ArrayDeque</p>
+                        <h5>Methods of Queue</h5>
+                        <ul>
+                            <li>add(E e) --> adds the element at the end of the queue</li>
+                            <li>remove() --> removes and returns the element at the front of the queue</li>
+                            <li>poll() --> removes and returns the element at the front of the queue, or returns null if the queue is empty</li>
+                            <li>element() --> returns the element at the front of the queue without removing it</li>
+                            <li>offer(E e) --> adds the element at the end of the queue, returns true if successful, false if the queue is full</li>
+                            <li>peek() --> returns the element at the front of the queue without removing it, or returns null if the queue is empty</li>
+                            <li>size() --> returns the number of elements in the queue</li>
+                            <li>isEmpty() --> returns true if the queue is empty, false otherwise</li>
+                        </ul>
+
+                        <h5>Deque</h5>
+                        <p>Deque is an interface that extends Queue and adds additional methods to handle elements in both ends (front and rear) of the queue. it is also called <code>LILO (Last-In-Last-Out)</code>order.</p>
+                        <p>Classes of deque: ArrayDeque, LinkedList</p>
+                        <h5>Methods of Deque</h5>
+                        <ul>
+                            <li>addFirst(E e) --> adds the element at the beginning of the deque</li>
+                            <li>addLast(E e) --> adds the element at the end of the deque</li>
+                            <li>removeFirst() --> removes and returns the element at the beginning of the deque</li>
+                            <li>removeLast() --> removes and returns the element at the end of the deque</li>
+                            <li>pollFirst() --> removes and returns the element at the beginning of the deque, or returns null if the deque is empty</li>
+                            <li>pollLast() --> removes and returns the element at the end of the deque, or returns null if the deque is empty</li>
+                            <li>getFirst() --> returns the element at the beginning of the deque without removing it, or returns null if the deque is empty</li>
+                            <li>getLast() --> returns the element at the end of the deque without removing it, or returns null if the deque is empty</li>
+                            <li>offerFirst(E e) --> adds the element at the beginning of the deque, returns true if successful, false if the deque is full</li>
+                            <li>offerLast(E e) --> adds the element at the end of the deque, returns true if successful, false if the deque is full</li>
+                        </ul>
+
+                        <h5>Set</h5>
+                        <p>Set is an interface that extends Collection.</p>
+                        <ul>
+                            <li>Set doesn't allows duplicate elements.</li>
+                            <li>List allows homogenous and heterogeneous elements partially but not for TreeSet.</li>
+                            <li>List allows null values only once.</li>
+                            <li>Insertion order is not preserved.</li>
+                        </ul>
+                        <p>Classes of set: HashSet, LinkedHashSet, TreeSet</p>
+                        <h5>Methods of Set</h5>
+                        <ul>
+                            <li>add(E e) --> adds the element to the set</li>
+                            <li>remove(Object obj) --> removes the specified element from the set if it is present</li>
+                            <li>contains(Object obj) --> checks whether the set contains the specified element</li>
+                            <li>isEmpty() --> checks whether the set is empty</li>
+                            <li>size() --> returns the number of elements in the set</li>
+                            <li>clear() --> removes all elements from the set</li>
+                            <li>iterator() --> returns an iterator over the elements in the set</li>
+                            <li>toArray() --> returns an array containing all the elements in the set</li>
+                            <li>hashCode() --> returns the hash code value for this set</li>
+                            <li>equals(Object obj) --> compares this set with the specified object for equality</li>
+                        </ul>
+                        
+                        <h5>SortedSet</h5>
+                        <p>SortedSet is an interface that extends Set and adds additional methods to handle elements in sorted order.</p>
+                        <p>Classes of SortedSet: TreeSet</p>
+                        <h5>Methods of SortedSet</h5>
+                        <ul>
+                            <li>first (E) --> returns the first element in the sorted set</li>
+                            <li>last (E) --> returns the last element in the sorted set</li>
+                            <li>headSet(E toElement) --> returns a sorted set containing all the elements in this sorted set less than the specified element</li>
+                            <li>tailSet(E fromElement, boolean inclusive) --> returns a sorted set containing all the elements in this sorted set greater than or equal to the specified element</li>
+                            <li>comparator() --> returns the comparator that defines the order of elements in this sorted set</li>
+                            <li>subSet(E fromElement, E toElement) --> returns the set fromElement to toElement as new sorted set</li>
+                        </ul>
+
+                        <h5>NavigableSet</h5>
+                        <p>NavigableSet is an interface that extends SortedSet and adds additional methods to handle elements in a navigable order.</p>
+                        <p>Classes of NavigableSet: TreeSet</p>
+                        <h5>Methods of NavigableSet</h5>
+                        <ul>
+                            <li>lower(E e) --> returns the greatest element in the sorted set less than or equal to the given element</li>
+                            <li>floor(E e) --> returns the greatest element in the sorted set less than the given element</li>
+                            <li>ceiling(E e) --> returns the least element in the sorted set greater than or equal to the given element</li>
+                            <li>higher(E e) --> returns the least element in the sorted set greater than the given element</li>
+                            <li>pollFirst() --> removes and returns the first element in the sorted set</li>
+                            <li>pollLast() --> removes and returns the last element in the sorted set</li>
+                            <li>descendingSet() --> returns a sorted set with the elements in reverse order</li>
+                            <li>descendingIterator() --> returns an iterator over the elements in the sorted set in reverse order</li>
+                        </ul>
+
+                        <h5>Map</h5>
+                        <p>Map is an interface that represents a collection of key-value pairs.</p>
+                        <ul>
+                            <li>Map doesn't allows duplicate keys but allows duplicate values.</li>
+                            <li>Map allows heterogeneous elements (keys and values can be different data types).</li>
+                            <li>Insertion order is preserved.</li>
+                            <li>HashMap, LinkedHashMap allows null values any number of times but allows only one null key.</li>
+                            <li>TreeSet, TreeMap allows null keys and values</li>
+                        </ul>
+                        <p>Classes of Map: HashMap, Hashtable, LinkedHashMap, TreeMap, ConcurrentHashMap, IdentityHashMap, WeakHashMap</p>
+                        <h5>Methods of Map</h5>
+                        <ul>
+                            <li>put(K key, V value) --> adds the specified key-value pair to the map if the key is not already present</li>
+                            <li>put(K key, V value) --> replaces the value for the specified key with the specified value if the key is already present</li>
+                            <li>get(Object key) --> returns the value to which the specified key is mapped, or null if the map contains no mapping for the key</li>
+                            <li>containsKey(Object key) --> checks whether the map contains the specified key</li>
+                            <li>containsValue(Object value) --> checks whether the map contains the specified value</li>
+                            <li>remove(Object key) --> removes the mapping for the specified key from the map if it is present</li>
+                            <li>clear() --> removes all mappings from the map</li>
+                            <li>size() --> returns the number of key-value mappings in the map</li>
+                            <li>entrySet() --> returns a Set view of the mappings in the map</li>
+                            <li>keySet() --> returns a Set view of the keys in the map</li>
+                            <li>values() --> returns a Collection view of the values in the map</li>
+                            <li>hashCode() --> returns the hash code value for this map</li>
+                            <li>replace(k key, v value) --> replaces the value for the specified key with the specified value if the key is already present</li>
+                        </ul>
+
+                        <h5>SortedMap</h5>
+                        <p>SortedMap is an interface that extends Map and adds additional methods to handle elements in sorted order.</p>
+                        <p>Classes of SortedMap: TreeMap</p>
+                        <h5>Methods of SortedMap</h5>
+                        <ul>
+                            <li>firstKey() --> returns the first (lowest) key in the sorted map</li>
+                            <li>lastKey() --> returns the last (highest) key in the sorted map</li>
+                            <li>headMap(K toKey) --> returns a sorted map containing all the mappings in this sorted map less than the specified key</li>
+                            <li>tailMap(K fromKey, boolean inclusive) --> returns a sorted map containing all the mappings in this sorted map greater than or equal to the specified key</li>
+                            <li>comparator() --> returns the comparator that defines the order of elements in this sorted map</li>
+                            <li>subMap(K fromKey, K toKey) --> returns the map from fromKey to toKey as new sorted map</li>
+                        </ul>
+
+                        <h5>NavigableMap</h5>
+                        <p>NavigableMap is an interface that extends SortedMap and adds additional methods to handle elements in a navigable order.</p>
+                        <p>Classes of NavigableMap: TreeMap</p>
+                        <h5>Methods of NavigableMap</h5>
+                        <ul>
+                            <li>headMap(k toKey, boolean inclusive) --> returns a value greater than the specified key.</li>
+                            <li>tailMap(k fromKey, boolean inclusive) --> returns a value less than the specified key.</li>
+                            <li>subMap(k fromKey, k toKey) --> returns a value between the specified keys.</li>
+                            <li>lowerKey(k key) --> returns the greatest key less than or equal to the specified key.</li>
+                            <li>floorKey(k key) --> returns the greatest key less than the specified key.</li>
+                            <li>ceilingKey(k key) --> returns the least key greater than or equal to the specified key.</li>
+                            <li>higherKey(k key) --> returns the least key greater than the specified key.</li>
+                            <li>descendingMap() --> returns a reverse order view of the map.</li>
+                        </ul>
+
+                        <h5>Map.Entry</h5>
+                        <p>Map.Entry is an interface in Java that represents a single entry in a map.</p>
+                        <p>Classes of Map.Entry: HashMap.Entry, LinkedHashMap.Entry, TreeMap.Entry</p>
+                        <h5>Methods of Map.Entry</h5>
+                        <ul>
+                            <li>getKey() --> returns the key associated with this entry</li>
+                            <li>getValue() --> returns the value associated with this entry</li>
+                            <li>setValue(V value) --> replaces the value associated with this entry with the specified value</li>
+                            <li>hashCode() --> returns the hash code value for this entry</li>
+                            <li>equals(Object o) --> indicates whether some other object is "equal to" this one</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="cursors">
+                        <h2>Cursors</h2><hr>
+                        <p></p>
+                        <h5>Iterator</h5>
+                        <p>Iterator is an interface in Java that provides a way to traverse through a collection.</p>
+                        <p>Methods in Iterator interface:</p>
+                        <ul>
+                            <li>hasNext() --> returns true if the iteration has more elements</li>
+                            <li>next() --> returns the next element in the iteration</li>
+                            <li>remove() --> removes the last element returned by the iterator from the collection</li>
+                        </ul>
+                        
+                        <h5>ListIterator</h5>
+                        <p>ListIterator is an interface in Java that provides a way to traverse through a list and modify its elements.</p>
+                        <p>Methods in ListIterator interface:</p>
+                        <ul>
+                            <li>hasNext() --> returns true if the iteration has more elements</li>
+                            <li>next() --> returns the next element in the iteration</li>
+                            <li>remove() --> removes the last element returned by the iterator from the collection</li>
+                            <li>previous() --> returns the previous element in the iteration</li>
+                            <li>hasPrevious() --> returns true if the iteration has a previous element</li>
+                            <li>nextIndex() --> returns the index of the next element to be returned by the iterator</li>
+                            <li>previousIndex() --> returns the index of the previous element to be returned by the iterator</li>
+                        </ul>
+
+                        <h5>Enumeration</h5>
+                        <p>Enumeration is an interface in Java that provides a way to traverse through a collection in a legacy manner.</p>
+                        <p>Methods in Enumeration interface:</p>
+                        <ul>
+                            <li>hasMoreElements() --> returns true if the enumeration has more elements</li>
+                            <li>nextElement() --> returns the next element in the enumeration</li>
+                        </ul>
+
+                        <h5>Comparable</h5>
+                        <p>Comparable is an interface in Java that provides a way to compare two objects.</p>
+                        <p>Methods in Comparable interface:</p>
+                        <ul>
+                            <li>compareTo(Object o) --> compares this object with the specified object for order. 
+                                Returns a negative integer, zero, or a positive integer as this object is less than, equal to, or greater than the specified object</li>
+                        </ul>
+
+                        <h5>Comparator</h5>
+                        <p>Comparator is an interface in Java that provides a way to compare two objects based on a specific criteria.</p>
+                        <p>Methods in Comparator interface:</p>
+                        <ul>
+                            <li>compare(T o1, T o2) --> compares the two objects o1 and o2 and 
+                                returns a negative integer, zero, or a positive integer as o1 is less than, equal to, or greater than o2</li>
+                        </ul>
+                        <h2>Other Left Classes in Collections</h2><hr>
+                        <h5>Vector</h5>
+                        <p>Vector is a class in Java that provides a way to store a collection of objects.</p>
+                        <p>Methods in Vector class:</p>
+                        <ul>
+                            <li>add(E e) --> adds the specified element to the end of the vector</li>
+                            <li>remove(int index) --> removes the element at the specified index from the vector</li>
+                            <li>get(int index) --> returns the element at the specified index from the vector</li>
+                            <li></li>
+                        </ul>
+                        <h5>Stack</h5>
+                        <p>Stack is a class in Java that provides a way to store a collection of objects in <code>LIFO (Last-In-First-Out)</code> order.</p>
+                        <p>Methods in Stack class:</p>
+                        <ul>
+                            <li>push(E e) --> adds the specified element to the top of the stack</li>
+                            <li>pop() --> removes and returns the element at the top of the stack, if we call pop() with empty stack it returns EmptyStackException</li>
+                            <li>peek() --> returns the element at the top of the stack without removing it, if we call peek() with empty stack it returns EmptyStackException</li>
+                            <li>empty() --> checks whether the stack is empty or not</li>
+                            <li>search() --> used to search the index of the element, 
+                                if we have 2 same values it takes the element near to top of the stack, if stack is empty then it returns -1. </li>
+                        </ul>
+                        <h5>CopyOnWriteArrayList</h5>
+                        <p>CopyOnWriteArrayList is a class in Java that provides a way to store a collection of objects in <code>concurrent</code> mode. it is synchronized. It makes a fresh copy of ArrayList</p>
+                        <p>It makes the program <code>FailSafe</code>when we are adding the elements while iterating the elements, then we won't get any Exception due to CopyOnWriteArrayList, 
+                            for others like arraylist, linkedlist etc.. it shows <code>ConcurrentModificationException -- Failfast</code></p>
+                        <p>Methods in CopyOnWriteArrayList class:</p>
+                        <ul>
+                            <li>add(E e) --> adds the specified element to the end of the list</li>
+                            <li>remove(Object o) --> removes the first occurrence of the specified element from the list</li>
+                            <li>get(int index) --> returns the element at the specified index from the list</li>
+                            <li></li>
+                        </ul>
+                        
+                        <h5>ConcurrentHashMap</h5>
+                        <ul>
+                            <li>It is Thread-Safe</li>
+                            <li>Fast Performance</li>
+                            <li>Null key and values are not allowed</li>
+                            <li>the thread is like segements, other threads will wait until before threads excecutes.</li>
+                        </ul>
+                        <h5>WeakHashMap</h5>
+                        <p>WeakHashMap is a class in Java that provides a way to store a collection of objects in <code>weak</code> mode.</p>
+                        <p>It can't demand the garbage collector to remove the key-value pairs from the map. HashMap demands the garbage collector, 
+                            so we prefer WeakHashMap when we need to remove the key-value pairs from the map.</p>
+                        <p>Program: </p>
+                        <pre>Map<String, String> m = new WeakHashMap<>();		
+m.put(s1, "Sudheer");
+System.out.println(m);
+n = null;
+System.gc();
+System.out.println(m);
+Output: {Hello=Sudheer}{Hello=Babu}</pre>
+                        <h5>IdentityHashMap</h5>
+                        <p>HashMap internally working on equals method whether it is string or string literal</p>
+                        <p>IdentityHashMap internally working on == operator, if we have two strings same value with different obect references will consider as different entries.</p>
+                        <p>Program: </p>
+                        <pre>Map<String, String> m = new IdentityHashMap<>();		
+String s1 = new String("Hello");
+String s2 = new String("Hello");
+m.put(s1, "Sudheer");
+m.put(s2, "babu");
+System.out.println(m);
+Output: {Hello=Sudheer}{Hello=Babu}</pre>
+                    </section>
+                </div>
+                
+                <div class="content">
+                    <section id="inner-classes">
+                        <h2>Inner Classes</h2><hr>
+                        
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="multithreading">
+                        <h2>Multithreading</h2><hr>
+                        <ul>
+                            <li>Thread is a light weight process</li>
+                            <li>Thread is a process of an execution in a program.</li>
+                            <li>Thread terminology came from concept of multitasking</li>
+                        </ul>
+                        <h5>Mutlitasking</h5>
+                       <ul>
+                        <li>Excecution several tasks simultaneously is the concept of multitasking.</li>
+                       </ul>
+                       <p>There are 2 types of multitasking</p>
+                       <ul>
+                            <li>Process based Mutlitasking (PBM)</li>
+                            <ul type="disc">
+                                <li>Executing several tasks simultaneously where each task is a separate independent programm is called PBM </li>
+                                <li>These are OS level but not at programming level.</li>
+                                <li>Ex: CPU, Browser</li>
+                            </ul>
+                            <li>Thread based Multitasking</li>
+                            <ul type="disc">
+                                <li>Executing several tasks simultaneously where each task is a separate independent part of the same program is called TBM and each independent part is called Thread.</li>
+                                <li>TBM is best suitable at programmatic level.</li>
+                                <li>Whether it is PB or TB the main advantage of multitasking is to reduce response time and to improve the performance of the system.</li>
+                            </ul>
+                       </ul>
+
+                       <p>The main important application areas of multithreading are</p>
+                       <ul>
+                        <li>To develop multimedia graphics.</li>
+                        <li>To implement viedo Animations</li>
+                        <li>To develop viedo games</li>
+                        <li>To develop a server</li>
+                        <li>To develop server and web application servers</li>
+                       </ul>
+
+                       <p>How to define a Thread ?</p>
+                       <ul>
+                        <li>By extending the Thread class.</li>
+                        <li>By Implementing the Runnable Interface.</li>
+                       </ul>
+
+                       
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="java-8-features">
+                        <h2>Java 8 Features</h2><hr>
+                        <p>Lambda Expressions</p>
+                        <ul>
+                            <li>Lambda expressions allow us to write a single line of code in place of a method</li>
+                            <li>Lambda expressions can be used as arguments to methods, constructors, and in most places where a functional interface is expected</li>
+                            <li>Lambda expressions are anonymous, meaning they don't have a name</li>
+                        </ul>
+                        <h6>Example:</h6>
+                        <pre>interface Interf1{
+    void method1();
+}
+
+public class Test1 {
+    Interf1 i1 = () -> {
+        System.out.println("Hello World!")
+    }
+    i1.method1();
+}</pre>
+                        <h5>Predicate  Interface</h5>
+                        <p>Predicate is a functional interface that takes one argument and returns a boolean value.</p>
+                        <p>Methods in Predicate interface:</p>
+                        <ul>
+                            <li>test(T t) --> returns true if the given argument matches the predicate</li>
+                            <li>negate() --> returns a predicate that negates the given predicate</li>
+                            <li>and(Predicate<? super T> other) --> returns a predicate that is true if both this predicate and the given predicate are true</li>
+                            <li>or(Predicate<? super T> other) --> returns a predicate that is true if either this predicate or the given predicate is true</li>
+                            <li>isEqual(Object other) --> returns a predicate that is true if this predicate and the given object are equal</li>
+                        </ul>
+                        
+                        <h5>Function Interface</h5>
+                        <p>Function is a functional interface that takes one argument and returns a result.</p>
+                        <p>Methods in Function interface:</p>
+                        <ul>
+                            <li>apply(T t) --> returns the result of applying this function to the given argument</li>
+                            <li>andThen(Function<? super T,? extends R> after) --> returns a composed function that first applies this function to its input, and then applies the after function to the result</li>
+                            <li>compose(Function<? super R,? extends T> before) --> returns a composed function that first applies the before function to its input, and then applies this function to the result</li>
+                            <li>identity() --> returns a function that always returns its input argument</li>
+                        </ul>
+
+                        <h5>Consumer Interface</h5>
+                        <p>Consumer is a functional interface that takes one argument and returns nothing.</p>
+                        <p>Methods in Consumer interface:</p>
+                        <ul>
+                            <li>accept(T t) --> takes a value and performs an action on it</li>
+                            <li>andThen(Consumer<? super T> after) --> returns a composed consumer that, when this consumer is applied to an input, applies the after consumer to the result</li>
+                        </ul>
+                       
+                        <h5>Supplier Interface</h5>
+                        <p>Supplier is a functional interface that won't take any argument andreturns a result.</p>
+                        <p>Methods in Supplier interface:</p>
+                        <ul>
+                            <li>get() --> returns a result generated by this supplier</li>
+                            <li>supplier(Supplier<? extends R> other) --> returns a composed supplier that, when this supplier is applied, applies the other supplier to the result</li>
+                        </ul>
+
+                        <h5>BiPredicate Interface</h5>
+                        <p>BiPredicate is a functional interface that takes two arguments and returns a boolean value.</p>
+                        <p>Methods in BiPredicate interface:</p>
+                        <ul>
+                            <li>test(T t, U u) --> returns true if both the given arguments match the predicate</li>
+                            <li>negate() --> returns a predicate that negates the given predicate</li>
+                            <li>and(BiPredicate<? super T,? super U> other) --> returns a predicate that is true if both this predicate and the given predicate are true</li>
+                            <li>or(BiPredicate<? super T,? super U> other) --> returns a predicate that is true if either this predicate or the given predicate is true</li>
+                            <li>isEqual(Object other) --> returns a predicate that is true if this predicate and the given object are equal</li>
+                        </ul>
+
+                        <h5>BiFunction Interface</h5>
+                        <p>BiFunction is a functional interface that takes two arguments and returns a result.</p>
+                        <p>Methods in BiFunction interface:</p>
+                        <ul>
+                            <li>apply(T t, U u) --> returns the result of applying this function to the given arguments</li>
+                            <li>andThen(BiFunction<? super T,? super U,? extends R> after) --> returns a composed function that first applies this function to its input arguments, and then applies the after function to the result</li>
+                            <li>compose(BiFunction<? super R,? super U,? extends T> before) --> returns a composed function that first applies the before function to its input arguments, and then applies this function to the result</li>
+                            <li>identity() --> returns a function that always returns its input arguments</li>
+                        </ul>
+
+                        <h5>BiConsumer Interface</h5>
+                        <h6>BiConsumer Interface is a functional interface that takes two arguments and returns nothing.</h6>
+                        <p>Methods in BiConsumer interface:</p>
+                        <ul>
+                            <li>accept(T t, U u) --> takes two values and performs an action on them</li>
+                            <li>andThen(BiConsumer<? super T,? super U> after) --> returns a composed consumer that, when this consumer is applied to an input, applies the after consumer to the result</li>
+                        </ul>
+
+                        <p>Stream API</p>
+                        <ul>
+                            <li>Stream is a sequence of elements that supports aggregate operations</li>
+                            <li>Stream API provides a functional programming style for data processing</li>
+                            <li>Stream API is implemented as a pipeline of intermediate and terminal operations</li>
+                        </ul>
+                        <p>Methods of stream API:</p>
+                        <ul>
+                            <li>stream() --> returns a stream containing elements of the source collection</li>
+                            <li>parallelStream() --> returns a parallel stream containing elements of the source collection</li>
+                            <li>filter(Predicate<? super T> predicate) --> returns a stream containing only the elements of this stream that satisfy the given predicate</li>
+                            <li>map(Function<? super T,? extends R> mapper) --> returns a stream containing the results of applying the given function to the elements of this stream</li>
+                            <li>flatMap(Function<? super T, Stream<? extends R>> mapper) --> returns a stream containing the results of applying the given function to the elements of this stream and concatenating the results</li>
+                            <li>distinct() --> returns a stream containing only the distinct elements of this stream</li>
+                            <li>sorted() --> returns a stream that is sorted according to the natural ordering of its elements</li>
+                            <li>count --> returns the number of elements in the stream</li>
+                            <li>forEach(Consumer<? super T> action) --> performs an action for each element of the stream</li>
+                            <li>reduce(T identity, BinaryOperator<T> accumulator) --> returns the result of applying a binary operator to all elements in the stream, or identity if the stream is empty</li>
+                            <li>toArray() --> returns an array containing all elements of the stream</li>
+                            <li>collect(Collector<? super T, A, R> collector) --> returns the result of applying a collector to the elements of the stream</li>
+                        </ul>
+                        
+                        <h5>Optional Class</h5>
+                        <p>Optional class is a container object that may or may not contain a non-null value.</p>
+                        <p>Methods of Optional class:</p>
+                        <ul>
+                            <li>isPresent() --> returns true if this Optional object contains a value</li>
+                            <li>get() --> returns the value of this Optional object if present, otherwise throws NoSuchElementException</li>
+                            <li>orElse(T other) --> returns the value of this Optional object if present, otherwise returns the given other value</li>
+                            <li>orElseGet(Supplier<? extends T> supplier) --> returns the value of this Optional object if present, otherwise returns the result of the given supplier</li>
+                            <li>orElseThrow(Supplier<? extends RuntimeException> supplier) --> throws the exception returned by the given supplier if this Optional object is empty</li>
+                            <li>ifPresent(Consumer<? super T> consumer) --> performs the given action if this Optional object is present</li>
+                        </ul>
+
+                        <h5>Date and Time API</h5>
+                        <p>Date and Time API provides a rich set of classes and interfaces for working with dates, times, and time zones.</p>
+                        <p>Methods related to LocalDate, LocalTime, LocalDateTime, ZonedDateTime, Instant, Duration, Period, and TemporalAdjuster:</p>
+                        <code></code>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="Interview- Questions">
+                        <h2>Interview Questions</h2><hr>
+                        <ol>
+                            <b><li>....</li></b>
+                            <p></p>
+                            <b><li></li></b>
+                        </ol>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <button id="backToTop" class="btn btn-primary" aria-label="Back to top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+            </svg>
+        </button>
+    </div>
+    
+    <script src="script.js">
+
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+</body>
+</html>
+
+
+
+

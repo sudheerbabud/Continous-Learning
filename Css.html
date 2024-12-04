@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuous Learning</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        .nav-link {
+            border-left: 6px solid purple;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="sidebar" class="col-lg-2 sidebar">
+                <button id="sidebarToggle" class="btn btn-primary d-lg-none" aria-label="Toggle navigation menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <ul class="nav flex-column">
+                    <li class="nav-item"><span class="nav-link" style="color:red;font-size: 24px; font-weight: 900;">CSS</span></li>
+                    <li class="nav-item"><a class="nav-link" href="#introduction">Introduction</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#text-properties">Text-Properties</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#box-model">Box-Model</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#units-position">Units, Position</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#media-queries">Media Queries, Animation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#transition-trandform">Transition, Transform</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-10">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-right pt-3 pb-2 mb-3">
+                    <a href="index.html" class="btn btn-primary btn-back">Back</a>
+                    <div class="d-flex align-items-center">
+                        <a href="index.html" class="text-decoration-none text-dark me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:sudheerbabudoddakula@gmail.com" class="text-decoration-none text-dark me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                              </svg>
+                        </a>
+                        <span class="text-dark" style="font-weight: bold;">Sudheer Babu Doddakula</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <section id="introduction">
+                        <h1>Introduction of CSS</h1><hr>
+                        <p>CSS - Cascading Style Sheets - Used to style HTML documents</p>
+                        <p>We can apply style for HTML elements in 3 ways</p>
+                        <ol>
+                            <li>Inline Styles - We can apply style directly to the HTML element using style attribute</li>
+                            <li>Internal Stylesheets - We can apply style to the HTML document using style tag inside the head tag</li>
+                            <li>External Stylesheets - We can apply style to the HTML document using link tag inside the head tag</li>
+                        </ol>
+
+                        <p>We can apply style to the HTML elements using CSS selectors</p>
+                        <ul>
+                            <li>Tag Name - Selects all HTML elements with the given tag name</li>
+                            <li>Class - Selects HTML elements with the given class name</li>
+                            <li>ID - Selects the HTML element with the given ID</li>
+                            <li>Universal Selector - Selects all HTML elements</li>
+                            <li>Attribute Selector - Selects HTML elements with the specified attribute</li>
+                            <li>Pseudo-class Selector - Selects HTML elements based on their state</li>
+                            <li>Group Selector - Selects multiple HTML elements</li>
+                            <li>Descendant Selector - Selects HTML elements that are descendants of a specified element</li>
+                            <li>Child Selector - Selects HTML elements that are direct children of a specified element</li>
+                            <li>Adjacent Sibling Selector - Selects HTML elements that are adjacent siblings</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="text-properties">
+                        <h2>Text Properties</h2><hr>
+                        <ol>
+                            <li>font-family - Specifies the font family for text</li>
+                            <li>font-size - Specifies the size of the font</li>
+                            <li>font-weight - Specifies the weight of the font</li>
+                            <li>color - Specifies the color of the text</li>
+                            <li>text-align - Specifies the horizontal alignment of the text</li>
+                            <li>text-decoration - Specifies the decoration of the text</li>
+                            <li>text-transform - Specifies the capitalization of the text</li>
+                            <li>line-height - Specifies the line height</li>
+                            <li>text-indent - Specifies the indentation of the first line of text</li>
+                            <li>text-shadow - Specifies a shadow effect on the text</li>
+                            <li>word-spacing - Specifies the spacing between words</li>
+                        </ol>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="box-model">
+                        <h2>Basic Properties</h2><hr>
+                        <ul>
+                            <li>width - Specifies the width of an element</li>
+                            <li>height - Specifies the height of an element</li>
+                            <li>border - Specifies the width, style, and color of an element's border</li>
+                            <li>padding - Specifies the width, style, and color of an element's padding</li>
+                            <li>margin - Specifies the width, style, and color of an element's margin</li>
+                            <li>color - color of the text</li>
+                            <li>background-color - color of the background</li>
+                            <li>border-radius - Specifies the rounded corners of an element</li>
+                        </ul>
+                        <h2>Box Model</h2><hr>
+                        <ul>
+                            <li>Content Area - The area inside the padding and border</li>
+                            <li>Padding - The area inside the content area, between the content and the border</li>
+                            <li>Border - The area around the padding and content area</li>
+                            <li>Margin - The area outside the border, between the border and the next element</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="units-position">
+                        <h2>Units in CSS</h2><hr>
+                        <ul>
+                            <li>px - pixels</li>
+                            <li>em - relative to the font-size of the parent element</li>
+                            <li>rem - relative to the root element (html)</li>
+                            <li>vw - relative to the viewport width</li>
+                            <li>vh - relative to the viewport height</li>
+                            <li>cm - centimeters</li>
+                            <li>mm - millimeters</li>
+                            <li>in - inches</li>
+                            <li>pt - points</li>
+                            <li>pc - picas</li>
+                            <li>% - percentage</li>
+                        </ul>
+                        <h2>Position in CSS</h2><hr>
+                        <ul>
+                            <li>static - The element is positioned relative to the normal document flow</li>
+                            <li>relative - The element is positioned relative to its normal position</li>
+                            <li>absolute - The element is positioned relative to the nearest positioned ancestor</li>
+                            <li>fixed - The element is positioned relative to the viewport</li>
+                            <li>sticky - The element is positioned relative to the nearest scrollable ancestor</li>
+                            <li>inherit - The element inherits the position from its parent element</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="media-queries">
+                        <h2>Media Queries</h2><hr>
+                        <p>We can use media queries to apply different styles based on the screen size or device type.</p>
+                        <pre>@Media(width:600px){
+div{
+    background-color: blue;
+}
+}</pre>
+                        </pre>
+                        <h2>Animation</h2><hr>
+                        <p>Animation - Used to create animations in CSS</p>
+                        <pre>@keyframes animation{
+0% {background-color: red;}
+50% {background-color: yellow;}
+100% {background-color: green;}
+}</pre>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="transition-trandform">
+                        <h2>Transition</h2><hr>
+                        <ul>
+                            <li>transition-property - font-size, width..</li>
+                            <li>transition-duration - time 2s/4ms</li>
+                            <li>transition-timing-function - linear, ease, ease-in, ease-out, ease-in-out</li>
+                            <li>transition-delay - time 1s/2ms</li>
+                            <li>transition-fill-mode - forwards, backwards, both</li>
+                        </ul>
+                        <h2>Transform</h2><hr>
+                        <ul>
+                            <li>transform - scale(2), rotate(45deg), translate(100px, 100px)</li>
+                            <li>transform-origin - top left, bottom right, center center</li>
+                            <li>transform-style - preserve-3d, flat, preserve-3d</li>
+                            <li>transform-box - border-box, content-box, fill-box</li>
+                            <li>transform-scale - scale(2), scale(2, 3)</li>
+                            <li>transform-rotate - rotate(45deg)</li>
+                            <li>transform-translate - translate(100px, 100px)</li>
+                            <li>transform-skew - skew(45deg)</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <button id="backToTop" class="btn btn-primary" aria-label="Back to top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+            </svg>
+        </button>
+    </div>
+    
+    <script src="script.js">
+
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+</body>
+</html>
+
+
+
+

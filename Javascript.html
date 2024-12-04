@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuous Learning</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        .nav-link {
+            border-left: 6px solid yellowgreen;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div id="sidebar" class="col-lg-2 sidebar">
+                <button id="sidebarToggle" class="btn btn-primary d-lg-none" aria-label="Toggle navigation menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <ul class="nav flex-column">
+                    <li class="nav-item"><span class="nav-link" style="color:red;font-size: 24px; font-weight: 900;">Javascript</span></li>
+                    <li class="nav-item"><a class="nav-link" href="#introduction">Introduction</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Javascript">JavaScript Basics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#operators">Operators, Keywords</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#object">Object, Arrays, Sets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Numbers">Numbers, Math</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#map-fun">Map, Functions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Events">Events</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-10">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-right pt-3 pb-2 mb-3">
+                    <a href="index.html" class="btn btn-primary btn-back">Back</a>
+                    <div class="d-flex align-items-center">
+                        <a href="index.html" class="text-decoration-none text-dark me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:sudheerbabudoddakula@gmail.com" class="text-decoration-none text-dark me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                              </svg>
+                        </a>
+                        <span class="text-dark" style="font-weight: bold;">Sudheer Babu Doddakula</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <section id="introduction">
+                        <h1>Introduction of JavaScript</h1>
+                        <p>JavaScript is used to have interactions with the webpage. JavaScript to program the behavior of web pages</p>
+                        <p>We can keep the script in head or body section of the HTML document</p>
+                        <h5>Javascript Display</h5>
+                        <ol>
+                            <li>Using innerHTML</li>
+                            <li>Using document.write()</li>
+                            <li>Using console.log()</li>
+                            <li>Using window.alert()</li>
+                        </ol>
+                        <h5>Comments</h5>
+                        <p>Comments are used to hide the code or to explain the code</p>
+                        <ul>
+                            <li>Single line comment: // comment</li>
+                            <li>Multi-line comment: /* comment */</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="JavaScript">
+                        <h2>Javascript Basics </h2><hr>
+                        <h5>Variables</h5>
+                        <p>Variables are used to store the data in JavaScript</p>
+                            <ul>
+                                <li>var</li>
+                                <ol>
+                                    <li><b>Scope:</b>Global scope</li>
+                                    <li><b>Hoisting:</b> Variables declared with var are hoisted to the top of the function or global scope</li>
+                                    <li><b>Re-assigning</b>Assigned value can be changed after the declaration.</li>
+                                    <li><b>Re-declaration:</b>Can be re-declared with in the scope.</li>
+                                    <li><b>Intilization resource:</b>No need to be initialized when declared.</li>
+                                </ol>
+                                <li>let</li>
+                                <ol>
+                                    <li><b>Scope:</b>Within block</li>
+                                    <li><b>Hoisting:</b> Variables declared remains in the block scope</li>
+                                    <li><b>Re-assigning</b>Assigned value can be changed after the declaration.</li>
+                                    <li><b>Re-declaration:</b>Cannot be re-declared with in the same scope.</li>
+                                    <li><b>Intilization resource:</b>No need to be initialized when declared.</li>
+                                </ol>
+                                <li>const</li>
+                                <ol>
+                                    <li><b>Scope:</b>Within block</li>
+                                    <li><b>Hoisting:</b> Variables declared remains in the block scope</li>
+                                    <li><b>Re-assigning</b>Assigned value cannot be changed after the declaration.</li>
+                                    <li><b>Re-declaration:</b>Cannot be re-declared with in the same scope.</li>
+                                    <li><b>Intilization resource:</b>Must be initialized when declared.</li>
+                                </ol>
+                                </ol>
+                            </ul>
+                        
+                            <h2>Data Types</h2><hr>
+                            <ul>
+                                <li>Primitive Types</li>
+                                <ol>
+                                    <li>Number - 1, 2, 3, 4, 5</li>
+                                    <li>String - "JavaScript", "React</li>
+                                    <li>Boolean - true, false</li>
+                                    <li>Null - null</li>
+                                    <li>Undefined - undefined</li>
+                                    <li>Symbol - </li>
+                                    <li>Bigint - 2832883738287828738</li>
+                                </ol>
+                                <li>Non-Primitive Types</li>
+                                <ol>
+                                    <li>Object</li>
+                                    <li>Function</li>
+                                    <li>Array</li>
+                                    <li>Date</li>
+                                    <li>RegExp</li>
+                                    <li>Set</li>
+                                    <li>Map</li>
+                                </ol>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="operators">
+                        <h2>Operators</h2><hr>
+                        <p>Operators are used to perform operations on variables and values.</p>
+                        <ul>
+                            <li>Arithmetic Operators</li>
+                            <ol>
+                                <li>Addition (+)</li>
+                                <li>Subtraction (-)</li>
+                                <li>Multiplication (*)</li>
+                                <li>Division (/)</li>
+                                <li>Remainder (%)</li>
+                                <li>Exponentiation (**)</li>
+                            </ol>
+                            <li>Assignment Operators</li>
+                            <ol>
+                                <li>Equal (=)</li>
+                                <li>Addition Assignment (+=)</li>
+                                <li>Subtraction Assignment (-=)</li>
+                                <li>Multiplication Assignment (*=)</li>
+                                <li>Division Assignment (/=)</li>
+                                <li>Remainder Assignment (%=)</li>
+                            </ol>
+                            <li>Comparison Operators</li>
+                            <ol>
+                                <li>Equal (==)</li>
+                                <li>Not Equal (!=)</li>
+                                <li>Strict Equal (===)</li>
+                                <li>Strict Not Equal (!==)</li>
+                                <li>Greater Than (>)</li>
+                                <li>Less Than (<)</li>
+                                <li>Greater Than or Equal (>=)</li>
+                                <li>Less Than or Equal (<=)</li>
+                            </ol>
+                            <li>Logical Operators</li>
+                            <ol>
+                                <li>And (&&)</li>
+                                <li>OR (||)</li>
+                                <li>NOT (!)</li>
+                            </ol>
+                            <li>Bitwise Operators</li>
+                            <ol>
+                                <li>Bitwise AND (&)</li>
+                                <li>Bitwise OR (|)</li>
+                                <li>Bitwise XOR (^)</li>
+                                <li>Bitwise NOT (~)</li>
+                                <li>Left Shift (<<)</li>
+                                <li>Right Shift (>>)</li>
+                                <li>Zero Fill Right Shift (>>>)</li>
+                            </ol>
+                            <li>Ternary Operator</li>
+                            <ul>
+                                <li>Syntax: condition? value1 : value2;</li>
+                                <li>Example: var x = (5 > 3)? 10 : 20;</li>
+                            </ul>
+                        </ul>
+
+                        <h2>Conditional Statements</h2><hr>
+                        <ul>
+                            <li>if</li>
+                            <li>if-else</li>
+                            <li>switch-case</li>
+                        </ul>
+
+                        <h2>Loops</h2><hr>
+                        <ul>
+                            <li>for</li>
+                            <li>while</li>
+                            <li>do-while</li>
+                            <li>for-in</li>
+                            <li>for-of</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="object">
+                        <h2>Objects</h2><hr>
+                        <pre>let obj = {
+firstName: 'John',
+lastName: 'Doe',
+age: 36
+};</pre>
+<p>Console.log(obj.firstName)</p>
+<p>Console.log(obj["firstName"])</p>
+                        <h6>Using new keyword</h6>
+                        <pre>let person = new Object();
+person.firstName = "John";
+person.lastName = "Doe";
+person.age = 50;</pre>
+                        <p>Console.log(person.firstName)</p>
+                        
+                        <h2>Arrays</h2><hr>
+                        <code>let fruits = ["Apple", "Banana", "Cherry"];</code>
+                        <p>console.log(fruits) -- Output: ["Apple", "Banana", "Cherry"]</p>
+                        <p>console.log(fruits[1]) - Output: Banana</p>
+                        
+                        <h6>Using new keyword</h6>
+                        <code>const cars = new Array("Saab", "Volvo", "BMW");</code>
+                        <p>let car = cars</p>
+                        <p>console.log(car) - Output: Saab, Volvo, BMW</p>
+
+                        <h2>Sets</h2><hr>
+                        <code>let set = new Set([1, 2, 3, 4, 5]);</code><br>
+                        <pre>let set = new Set();
+set.add(1);
+set.add(2);
+set.add(3);
+set.add(4);
+console.log(set) Output:1,2,3,4</pre>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="Numbers">
+                        <h2>Numbers</h2><hr>
+                        <p>Integer precision are accurate to 15 digits.</p>
+                        <p>Floating-point precision are accurate to 15 digits after the decimal point</p>
+                        <h5>Concatination</h5>   
+                         <ul>
+                            <li>Number + Number = Number</li>
+                            <li>Number + String = String</li>
+                            <li>Number + Boolean = Number</li>
+                            <li>String + String = String</li>
+                            <li>String + Boolean = String</li>
+                            <li>Boolean + String = String</li>
+                            <li>Boolean + Boolean = Number</li>
+                         </ul>
+                        
+                         <h2>Dates</h2><hr>
+                        <p>const date = new Date();</p>
+                        <script>const d = new Date(); document.write(d)</script>
+                        <h5>Creating Date Objects</h5>
+                        <ul>
+                            <li>new Date()</li>
+                            <li>new Date(data string)</li>
+                            <li>new Date(year, month)</li>
+                            <li>new Date(year, month, day)</li>
+                            <li>new Date(year, month, day, hours)</li>
+                            <li>new Date(year, month, day, hours, minutes)</li>
+                            <li>new Date(year, month, day, hours, minutes, seconds)</li>
+                            <li>new Date(year, month, day, hours, minutes, seconds, ms)</li>
+                            <li>new Date(milliseconds)</li>
+                        </ul>
+
+                        <h5>Get Methods</h5>
+                        <ul>
+                            <li>getFullYear()</li>
+                            <li>getMonth() (0-11)</li>
+                            <li>getDate() (1-31)</li>
+                            <li>getDay() (0-6)</li>
+                            <li>getHours() (0-23)</li>
+                            <li>getMinutes() (0-59)</li>
+                            <li>getSeconds() (0-59)</li>
+                            <li>getMilliseconds() (0-999)</li>
+                            <li>getTime() (milliseconds since January 1, 1970)</li>
+                        </ul>
+
+                        <h5>Set Methods</h5>
+                        <ul>
+                            <li>setFullYear(year)</li>
+                            <li>setMonth(month)</li>
+                            <li>setDate(date)</li>
+                            <li>setHours(hours)</li>
+                            <li>setMinutes(minutes)</li>
+                            <li>setSeconds(seconds)</li>
+                            <li>setMilliseconds(milliseconds)</li>
+                        </ul>
+  
+                         <h5>Math</h5>
+                         <ul>
+                            <li>Math.abs(number)</li>
+                            <li>Math.floor(number)</li>
+                            <li>Math.ceil(number)</li>
+                            <li>Math.round(number)</li>
+                            <li>Math.max(...values)</li>
+                            <li>Math.min(...values)</li>
+                            <li>Math.pow(base, exponent)</li>
+                            <li>Math.sqrt(number)</li>
+                            <li><code>Math.random() (0-1)</code></li>
+                            <li>Math.sin(number)</li>
+                            <li>Math.cos(number)</li>
+                            <li>Math.tan(number)</li>
+                            <li>Math.atan(number)</li>
+                            <li>Math.atan2(y, x)</li>
+                            <li>Math.exp(number)</li>
+                         </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="map-fun">
+                        <h2>Map</h2>
+                        <p>A Map holds key-value pairs where the keys can be any datatype.
+                            A Map remembers the original insertion order of the keys.</p>
+                        <code>const fruits = new Map([["apples",500],["banana",200],["oranges"],300]]);</code>
+                        <pre>const fruits = new Map();
+fruits.set("apples",500);
+fruits.set("banana",200);
+fruits.set("oranges",300);</pre>
+                        <p>console.log(fruits.get("apples")) - Output: 500</p>
+
+                        <h2>Functions</h2><hr>
+                        <p>A function is a block of code that performs a specific task.</p>
+                        <h5>Types of Functions</h5>
+                        <ul>
+                            <li>Function declaration</li>
+                            <pre>function greet() {
+console.log("Hello, world!");
+}
+                              
+greet(); // Output: Hello, world!</pre>
+                            <li>Function Expression</li>
+                            <pre>const greet = function() {
+console.log("Hello, world!");
+};
+                              
+greet(); // Output: Hello, world!</pre>
+                            <li>Arrow Functions</li>
+                            <pre>const greet = () => {
+console.log("Hello, world!");
+};
+                              
+greet(); // Output: Hello, world!</pre>
+                            <li>Anonymous Functions</li>
+                            <pre>setTimeout(function() {
+console.log("This is an anonymous function");
+}, 1000);</pre>
+                            <li>Higer-order Functions</li>
+                            <pre>const numbers = [1, 2, 3, 4];
+const doubled = numbers.map(n => n * 2);
+console.log(doubled); // Output: [2, 4, 6, 8]</pre>
+                            <li>Callback Functions</li>
+                            <pre>function fetchData(callback) {
+setTimeout(() => {
+    callback("Data fetched!");
+}, 1000);
+}
+                              
+fetchData(function(message) {
+console.log(message); // Output: Data fetched!
+});</pre>
+                            <li>IIFE (Immediately Invoked Function Expression)</li>
+                            <pre>(function() {
+console.log("This function runs immediately!");
+})();</pre><p>Or</p><pre>(() => {
+console.log("This function runs immediately!");
+})();</pre>
+                            <li>Recursive Functions</li>
+                            <pre>function factorial(n) {
+if (n <= 1) return 1;
+return n * factorial(n - 1);
+}
+                              
+console.log(factorial(5)); // Output: 120</pre>
+                            <li>Generator Functions</li>
+                            <pre>function* generateNumbers() {
+yield 1;
+yield 2;
+yield 3;
+}
+                              
+const generator = generateNumbers();
+console.log(generator.next().value); // Output: 1
+console.log(generator.next().value); // Output: 2
+console.log(generator.next().value); // Output: 3</pre>
+                            <li>Async Functions</li>
+                            <pre>async function fetchData() {
+const response = await fetch("https://api.example.com");
+const data = await response.json();
+console.log(data);
+}
+                              
+fetchData();</pre>
+                            <li>Object Methods</li>
+                            <pre>const person = {
+name: "Alice",
+greet: function() {
+console.log(`Hello, ${this.name}`);
+}
+};
+                              
+person.greet(); // Output: Hello, Alice</pre>
+                            <li>Constructor Functions</li>
+                            <pre>function Person(name, age) {
+this.name = name;
+this.age = age;
+}
+                              
+const person1 = new Person("Alice", 30);
+console.log(person1.name); // Output: Alice</pre>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="Events">
+                        <h2>Events</h2>
+                        <p>Events - event can be something the browser does, or something a user does.</p>
+                        <ul>
+                            <li>onchange - fires when the value of an element changes.</li>
+                            <li>onclick - fires when an element is clicked.</li>
+                            <li>onmouseover - fires when the mouse moves over an element.</li>
+                            <li>onmouseout - fires when the mouse moves out of an element.</li>
+                            <li>onkeydown - fires when a user presses a key.</li>
+                            <li>onkeyup - fires when a user releases a key.</li>
+                            <li>onmousedown - fires when a user presses down on an element.</li>
+                            <li>onmouseup - fires when a user releases a mouse button.</li>
+                            <li>onmousemove - fires when the mouse moves over an element.</li>
+                            <li>onload - fires when a page has finished loading.</li>
+                        </ul>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+        <button id="backToTop" class="btn btn-primary" aria-label="Back to top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+            </svg>
+        </button>
+    </div>
+    
+    <script src="script.js">
+       
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+</body>
+</html>
+
+
+
+

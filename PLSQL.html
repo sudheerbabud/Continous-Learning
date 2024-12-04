@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuous Learning</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        .nav-link {
+            border-left: 6px solid blue;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div id="sidebar" class="col-lg-2 sidebar">
+                <button id="sidebarToggle" class="btn btn-primary d-lg-none" aria-label="Toggle navigation menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <ul class="nav flex-column">
+                    <li class="nav-item"><span class="nav-link" style="color:red;font-size: 24px; font-weight: 900;">PL/SQL</span></li>
+                    <li class="nav-item"><a class="nav-link" href="#introduction">Introduction</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#procedure">Storage Procedures</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Functions">Functions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Triggers">Triggers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Conditional">Conditional Statements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Loops">Loops</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#access-modifiers">Access Modifiers</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="col-lg-10">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-right pt-3 pb-2 mb-3">
+                    <a href="index.html" class="btn btn-primary btn-back">Back</a>
+                    <div class="d-flex align-items-center">
+                        <a href="index.html" class="text-decoration-none text-dark me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:sudheerbabudoddakula@gmail.com" class="text-decoration-none text-dark me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                              </svg>
+                        </a>
+                        <span class="text-dark" style="font-weight: bold;">Sudheer Babu Doddakula</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <section id="introduction">
+                        <h1>Introduction of PL/SQL</h1><hr>
+                        <p>PL/SQL, which stands for Procedural Language extensions to the Structured Query Language (SQL).<br>
+                            It is a combination of SQL along with the procedural features of programming languages. <br>
+                            It was developed by Oracle Corporation in the early 90's to enhance the capabilities of SQL. <br>
+                            PL/SQL is one of three key programming languages embedded in the Oracle Database, along with SQL itself and Java.</p>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="procedure">
+                        <h2>Sub program</h2><hr>
+                        <p> A subprogram is a program unit/module that performs a particular task. 
+                            These subprograms are combined to form larger programs. This is basically called the 'Modular design'. 
+                            A subprogram can be invoked by another subprogram or program which is called the calling program.
+                        </p>
+                        <p>A sub program can be created:</p>
+                        <ul>
+                            <li>At the schema level --> standalone subprogram</li> 
+                            <li>Inside a package level --> packaged subprogram</li>
+                            <li>Inside a PL/SQl block</li>
+                        </ul>
+                       <h5>Parts of a subprogram</h5>
+                       <ul>
+                            <li>Declarative Part</li>
+                            <li>Executable Part</li>
+                            <li>Exception-handling</li>
+                        </ul>
+
+                        <h2>Procedures</h2><hr>
+                        <p>Procedures − These subprograms do not return a value directly; mainly used to perform an action.</p>
+                        <p>Modes of Procedures:</p>
+                        <ul>
+                            <li>in</li>
+                            <li>out</li>
+                            <li>in/out</li>
+                        </ul>
+                        <h5>Creating a procedure</h5>
+                        <pre>CREATE [OR REPLACE] PROCEDURE procedure_name 
+[(parameter_name [IN | OUT | IN OUT] type [, ...])] 
+{IS | AS} 
+BEGIN 
+< procedure_body > 
+END procedure_name;</pre>
+                        <h6>Example: IN</h6>
+                        <pre>CREATE DEFINER=`root`@`localhost` PROCEDURE `new_procedure`(in x int)
+BEGIN
+    select * into en from emp where en0 =7766;
+END
+                            
+Call `new_procedure`(x)</pre>
+                        <h6>Example: OUT</h6>
+                        <pre>CREATE DEFINER=`root`@`localhost` PROCEDURE `new_procedure`(out en int)
+BEGIN
+    select empno into en from emp where ename = 'king';
+END
+                            
+Call `new_procedure`(@en)
+Select @en;</pre>       <h6>Example: IN/OUT</h6>
+                        <pre>CREATE DEFINER=`root`@`localhost` PROCEDURE `new_procedure`(in eno int, out en int)
+BEGIN
+    select sal into en from emp where empno= eno;
+END
+                            
+Call `new_procedure`(7839, @en)
+Select @en;</pre>   <h6>Example: INOUT</h6>
+                     <pre>CREATE DEFINER=`root`@`localhost` PROCEDURE `new_procedure`(inout result int)
+BEGIN
+    Set result = result +10;
+END
+                        
+Set @value = 78;
+Call `new_procedure`(@value)
+Select @value;
+                        </pre>   
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="Functions">
+                        <h2>Functions</h2><hr>
+                        <p>A function is same as a procedure except that it returns a value.</p>
+                        <h5>Creating a function</h5>
+                        <pre>CREATE [OR REPLACE] FUNCTION function_name 
+[(parameter_name [IN | OUT | IN OUT] type [, ...])] 
+RETURN return_datatype 
+{IS | AS} 
+BEGIN 
+ < function_body > 
+END [function_name];</pre>
+                        <h6>Example:</h6>
+                        <>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="Triggers">
+                        <h2>Triggers</h2>
+                        <p> Triggers are stored programs, which are automatically executed or fired when some events occur.</p>
+                        <h5>Creating a trigger</h5>
+                        <pre>CREATE [OR REPLACE] FUNCTION function_name 
+[(parameter_name [IN | OUT | IN OUT] type [, ...])] 
+RETURN return_datatype 
+{IS | AS} 
+BEGIN 
+ < function_body > 
+END [function_name];</pre>
+                        <h6>Example:</h6>
+                        <>
+                    
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="Conditional">
+                        <h2>Conditional Statements</h2><hr>
+                        <ul>
+                            <li>if then</li>
+                            <li>if then else</li>
+                            <li>if then elsif else</li>
+                            <li>case when</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="Loops">
+                        <h2>Loops</h2><hr>
+                        <p>for loop</p>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="access-modifiers">
+                        <h2>Access Modifiers</h2>
+                        <p>Content for Access Modifiers...</p>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="oops">
+                        <h2>Object-Oriented Programming (OOP)</h2>
+                        <p>Content for OOP...</p>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="string-handling">
+                        <h2>String Handling</h2>
+                        <p>Content for String Handling...</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <button id="backToTop" class="btn btn-primary" aria-label="Back to top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+            </svg>
+        </button>
+    </div>
+    
+    <script src="script.js">
+
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+</body>
+</html>
+
+
+
+

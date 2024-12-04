@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuous Learning</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	<link href="styles.css" rel="stylesheet">
+    <style>
+        .nav-link {
+            border-left: 6px solid brown;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="sidebar" class="col-lg-2 sidebar">
+                <button id="sidebarToggle" class="btn btn-primary d-lg-none" aria-label="Toggle navigation menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <ul class="nav flex-column">
+                    <li class="nav-item"><span class="nav-link" style="color:red;font-size: 24px; font-weight: 900;">HTML</span></li>
+                    <li class="nav-item"><a class="nav-link" href="#introduction">Introduction</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Tags-1">HTML Tags - 1</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Tags-2">HTML Tags - 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Tags-3">HTML Tags - 3</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Tags-4">HTML Tags - 4</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#table">Tables</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#form">Forms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#img-a">Img, a, viedo, audio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#block-inline">Block-level, Inline</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#formatting">Formatting Tags</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#color">Colors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Semantic">Semantic, NonSemantic</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Interview">Interview Questions</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-10">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-right pt-3 pb-2 mb-3">
+                    <a href="index.html" class="btn btn-primary btn-back">Back</a>
+                    <div class="d-flex align-items-center">
+                        <a href="index.html" class="text-decoration-none text-dark me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:sudheerbabudoddakula@gmail.com" class="text-decoration-none text-dark me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                              </svg>
+                        </a>
+                        <span class="text-dark" style="font-weight: bold;">Sudheer Babu Doddakula</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <section id="introduction">
+                        <h1>Introduction of HTML</h1><hr>
+                        <p>HTML --> HyperText Markup Language --> It is used to create the structure of the web page.</p>
+                        <p>HTML is not a programming language, it is a markup language. it won't gives errors if you write it in a wrong way.</p>
+                       
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="Tags-1">
+                        <h2>HTML Tags - 1</h2><hr>
+                        <ul>
+                            <li>DOCTYPE HTML --> it shows the document type of the HTML document.</li>
+                            <li>HTML --> It is the root element of an HTML document.</li>
+                            <li>Head --> It contains meta-information about the HTML document.</li>
+                            <li>title --> It is used to give the title of the HTML document.</li>
+                            <li>Body --> It contains the main content of the HTML document.</li>
+                            <li>header --> It is used to give the header of the HTML document.</li>
+                            <li>footer --> It is used to give the footer of the HTML document.</li>
+                            <li>style --> It is used to give the Internal styling of the HTML document.</li>
+                            <li>script --> It is used to give the Internal script in the HTML document.</li>
+                            <li>comment --> It is used to give the comments in the HTML document. <!-- helo --></li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="Tags-2">
+                        <h2>HTML TAGS - 2</h2><hr>
+                        <p>There are two types of HTML tags: Paired tags and Unpaired Tags</p>
+                        <h5>Paired tags</h5>
+                        <ul>
+                            <li>html</li>
+                            <li>head</li>
+                            <li>body</li>
+                            <li>header</li>
+                            <li>footer</li>
+                            <li>title</li>
+                            <li>style</li>
+                            <li>script</li>
+                            <li>p</li>
+                            <li>div</li>
+                            <li>span</li>
+                            <li>h1 to h6</li>
+                            <li>ul</li>
+                            <li>ol</li>
+                            <li>li</li>
+                            <li>table</li>
+                            <li>tr</li>
+                            <li>td</li>
+                            <li>th</li>
+                            <li>form</li>
+                            <li>button</li>
+                            <li>select</li>
+                            <li>option</li>
+                            <li>textarea</li>
+                            <li>label</li>
+                            <li>colgroup</li>
+                            <li>fieldset</li>
+                            <li>legend</li>
+                            <li>thead</li>
+                            <li>tbody</li>
+                            <li>tfoot</li>
+                            <li>caption</li>
+                            <li>address</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="Tags-3">
+                        <h2>HTML Tags - 3</h2><hr>
+                        <h5>Unpaired Tags</h5>
+                        <ul>
+                            <li>br</li>
+                            <li>hr</li>
+                            <li>img</li>
+                            <li>input</li>
+                            <li>col</li>
+                            <li>meta</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="Tags-4">
+                        <h2>HTML TAGS - 4</h2><hr>
+                        <ul>
+                            <li>abbr --> <span style="font-size: 12px;">(Abbreviation)</span></li>
+                            <li>acronym --> <span style="font-size: 12px;">(Acronym)</span></li>
+                            <li>cite --> <span style="font-size: 12px;">(Citation)</span></li>
+                            <li>dfn --> <span style="font-size: 12px;">(Definition)</span></li>
+                            <li>code --> <span style="font-size: 12px;">(Code)</span></li>
+                            <li>dfn --> <span style="font-size: 12px;">(Definition)</span></li>
+                            <li></li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="table">
+                        <h2>Table</h2><hr>
+                       <ul>
+                        <li>tabel </li>
+                        <li>tr -->table row</li>
+                        <li>td --> table data</li>
+                        <li>th --> table header</li>
+                       </ul>
+                       <table border="2">
+                            <tr>
+                                <th>S.No</th>
+                                <th>Name</th>
+                                <th>Age</th> 
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>30</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Jane Doe</td>
+                                <td>28</td>
+                            </tr>
+                       </table>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="form">
+                        <h2>Form</h2><hr>
+                        <p>Form Tag is used to create a form in HTML.</p>
+                        <ul>
+                            <li>form</li>
+                            <li>input</li>
+                            <li>label</li>
+                            <li>button</li>
+                            <li>select</li>
+                            <li>option</li>
+                            <li>textarea</li>
+                            <li>fieldset</li>
+                            <li>legend</li>
+                        </ul>
+
+                        <h2>Input Tag</h2><hr>
+                        <p>Input Tag is used to create form controls in HTML.</p>
+                        <ul>
+                            <li>input --> <input type="text" name="username" value="username"></li>
+                            <li>type --> <input type="password" name="password" value="password"></li>
+                            <li>text --> <input type="text" name="username" value="username"></li>
+                            <li>radio --> <input type="radio" name="gender" value="male"></li>
+                            <li>checkbox --> <input type="checkbox" name="hobby" value="cricket"></li>
+                            <li>submit --> <input type="submit" name="submit" value="submit"></li>
+                            <li>reset --> <input type="reset" name="reset" value="reset"></li>
+                            <li>button --> <input type="button" name="button" value="button"></li>
+                            <li>file --> <input type="file" name="file" value="file"></li>
+                            <li>select --> <input type="select" name="select" value="select"></li>
+                            <li>option --> <input type="option" name="option" value="option"></li>
+                            <li>textarea --> <input type="textarea" name="textarea" value="textarea"></li>
+                            <li>label --> <input type="label" name="label" value="label"></li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="img-a">
+                        <h2>Anchor Tag</h2><hr>
+                        <p>Anchor Tag is used to create a hyperlink in HTML.</p>
+                        <p>Example: <a href="https://www.google.com">Google</a></p>
+
+                        <h2>Image Tag</h2><hr>
+                        <p>Image Tag is used to add images in HTML.</p>
+                        <p>Example: <img src="https://tse2.mm.bing.net/th?id=OIP.54cGv7IvGtO0w6ETZXAYEAAAAA&pid=Api&P=0&h=180" alt="Image Description"></p>
+
+                        <h2>Viedo Tag</h2><hr>
+                        <p>Video Tag is used to add videos in HTML.</p>
+                        <p>Example: <video src="https://example.com/video.mp4" controls></video></p>
+
+                        <h2>Audio Tag</h2><hr>
+                        <p>Audio Tag is used to add audio in HTML.</p>
+                        <p>Example: <audio src="https://example.com/audio.mp3" controls></audio></p>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="block-inline">
+                        <h2>Block-level Elements</h2><hr>
+                        <p>An block-level element starts on a new line. A block-level element always takes up the full width available.</p>
+                        <ul>
+                            <li>address</li>
+                            <li>article</li>
+                            <li>aside</li>
+                            <li>blockquote</li>
+                            <li>canvas</li>
+                            <li>dd</li>
+                            <li>div</li>
+                            <li>dl</li>
+                            <li>dt</li>
+                            <li>fieldset</li>
+                            <li>figcaption</li>
+                            <li>figure</li>
+                            <li>footer</li>
+                            <li>form</li>
+                            <li>h1-h6</li>
+                            <li>header</li>
+                            <li>hr</li>
+                            <li>li</li>
+                            <li>main</li>
+                            <li>nav</li>
+                            <li>noscript</li>
+                            <li>ol</li>
+                            <li>p</li>
+                            <li>p</li>
+                            <li>pre</li>
+                            <li>section</li>
+                            <li>table</li>
+                            <li>tfoot</li>
+                            <li>ul</li>
+                            <li>viedo</li>
+                        </ul>
+
+                        <h2>Inline Elements</h2><hr>
+                        <p>An inline element does not start on a new line.
+                            An inline element only takes up as much width as necessary.</p>
+                            <ul>
+                                <li>a</li>
+                                <li>abbr</li>
+                                <li>acronym</li>
+                                <li>b</li>
+                                <li>br</li>
+                                <li>cite</li>
+                                <li>code</li>
+                                <li>del</li>
+                                <li>dfn</li>
+                                <li>em</li>
+                                <li>i</li>
+                                <li>img</li>
+                                <li>ins</li>
+                                <li>kbd</li>
+                                <li>label</li>
+                                <li>q</li>
+                                <li>samp</li>
+                                <li>small</li>
+                                <li>span</li>
+                                <li>strong</li>
+                                <li>sub</li>
+                                <li>sup</li>
+                                <li>var</li>
+                            </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="formatting">
+                        <h2>Formatting Tags</h2><hr>
+                        <p>bold --> <b>bold</b></p>
+                        <p>italic --> <i>italic</i></p>
+                        <p>underline --> <u>underline</u></p>
+                        <p>strikethrough --> <s>strikethrough</s></p>
+                        <p>strong --> <strong>strong</strong></p>
+                        <p>emphasis --> <em>emphasis</em></p>
+                        <p>subscript --> <sub>subscript</sub></p>
+                        <p>superscript --> <sup>superscript</sup></p>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="color">
+                        <h2>Colors</h2><hr>
+                        <p>We can different types of codes to add colors in HTML like RGB, HEX, RGBA, HSL, HSLA.</p>
+                        <ul>
+                            <li>red --> <font color="red">red</font></li>
+                            <li>green --> <font color="green">green</font></li>
+                            <li>blue --> <font color="blue">blue</font></li>
+                            <li>yellow --> <font color="yellow">yellow</font></li>
+                            <li>orange --> <font color="orange">orange</font></li>
+                           <li>violet --> <font color="violet">violet</font></li>
+                           <li>gray --> <font color="gray">gray</font></li>
+                           <li>white --> <font color="white">white</font></li>
+                           <li>black --> <font color="black">black</font></li>
+                           <li>pink --> <font color="pink">pink</font></li>
+                           <li>brown --> <font color="brown">brown</font></li>
+                           <li>cyan --> <font color="cyan">cyan</font></li>
+                           <li>magenta --> <font color="magenta">magenta</font></li>
+                           <li>lightgray --> <font color="lightgray">lightgray</font></li>
+                       
+                        </ul>
+                        <h5>Background Color</h5>
+                        <ul>
+                            <li>red --> <font style="background-color: red;">red</font></li>
+                            <li>green --> <font style="background-color: green;">green</font></li>
+                            <li>blue --> <font style="background-color: blue;">blue</font></li>
+                            <li>yellow --> <font style="background-color: yellow;">yellow</font></li>
+                            <li>orange --> <font style="background-color: orange;">orange</font></li>
+                           <li>violet --> <font style="background-color: violet;">violet</font></li>
+                        </ul>
+
+                        <h5>Border Color</h5>
+                        <ul>
+                            <p style="border:2px solid Tomato;">Hello World</p>
+                            <p style="border:2px solid DodgerBlue;">Hello World</p>
+                            <p style="border:2px solid Violet;">Hello World</p>
+                            <p style="border:2px solid green;">Hello World</p>
+                        </ul>                   
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="Semantic">
+                        <h2>Semantic Tags</h2><hr>
+                        <p>Sematic tags are the tags that we can know the purpose of the tag by seeing the name it self.</p>
+                        <ul>
+                            <li><b>header</b> - It is used to define the header of the tag.</li>
+                            <li><b>footer</b> - It is used to define the footer of the tag.</li>
+                            <li><b>nav</b> - It is used to define the navigation bar.</li>
+                            <li><b>section</b> - It is used to define a section in a document.</li>
+                            <li><b>article</b> - It is used to define a self-contained composition in a document.</li>
+                            <li><b>aside</b> - It is used to define content that is tangentially related to the content around it.</li>
+                            <li><b>figure</b> - It is used to define self-contained content.</li>
+                            <li><b>figcaption</b> - It is used to define a caption for a  element.</li>
+                            <li><b>main</b> - It is used to define the main content of a document.</li>
+                            <li><b>time</b> - It is used to define a specific time or date.</li>
+                            <li><b>mark</b> - It is used to define a marked or highlighted part of a text.</li>
+                            <li><b>progress</b> - It is used to show the progress of a task.</li>
+                        </ul>
+
+                        <h2>NonSemantic Tags</h2><hr>
+                        <p>NonSematic tags are the tags that we can't know the purpose of the tag by seeing the name it self.</p>
+                        <ul>
+                            <li><b>div</b> - It is a generic container for flow content.</li>
+                            <li><b>span</b> - It is a generic inline container for flow content.</li>
+                            <li><b>b </b>- represents text bold but it won't gives the idea about the text</li>
+                            <li><b>br</b> - It is used to insert a line break.</li>
+                            <li><b>img</b> - It is used to embed images.</li>
+                            <li><b>i</b>- represents text italic but it won't gives the idea about the text</li>
+                            <li><b>u</b> - represents text underline but it won't gives the idea about the text</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="Interview">
+                        <h2>Interview Questions</h2><hr>
+                        <ol>
+                            <b><li>What is the HTML?</li></b>
+                            <p>HyperText Markup Language - HTML is the standard markup language used to create web pages. It gives the structure and content to a web page.</p>
+                            <b><li>What are the two types of HTML tags? Paired tags and Unpaired tags?</li></b>
+                        </ol>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+        <button id="backToTop" class="btn btn-primary" aria-label="Back to top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+            </svg>
+        </button>
+    </div>
+    
+    <script src="script.js">
+        
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+</body>
+</html>
+
+
+
+
