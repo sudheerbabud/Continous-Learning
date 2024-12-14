@@ -34,10 +34,7 @@
                     <li class="nav-item"><a class="nav-link" href="#Operators">Operators</a></li>
                     <li class="nav-item"><a class="nav-link" href="#Clauses">Clauses</a></li>
                     <li class="nav-item"><a class="nav-link" href="#Sub-query">Sub Queries</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#file-handling">File Handling</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#exception-handling">Exception Handling</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#collections">Collections</a></li>
-                  
+                    <li class="nav-item"><a class="nav-link" href="#view">View, Set Operations</a></li>                  
                 </ul>
             </div>
             
@@ -100,12 +97,23 @@
                             <li>PRIMARY KEY</li>
                             <li>FOREIGN KEY</li>
                             <li>CHECK</li>
-                            <li>DEFAULT</li>
-                            <li>Composite Key</li>
+                            <li>DEFAULT NULL</li>
                             <li>UNIQUE</li>
                             <li>create index</li>
                             <li>auto-increment</li>
                         </ol>
+                        <pre>CREATE TABLE example_table (
+id INT AUTO_INCREMENT PRIMARY KEY, -- Primary key with auto-increment
+name VARCHAR(100) NOT NULL,       -- NOT NULL constraint
+age INT CHECK (age >= 18),        -- CHECK constraint
+email VARCHAR(255) UNIQUE,        -- UNIQUE constraint
+customer_id INT,                  -- Foreign key
+FOREIGN KEY (customer_id) REFERENCES customers(customer_id), -- Foreign key reference
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- DEFAULT with current timestamp
+status VARCHAR(50) DEFAULT 'active', -- DEFAULT with a static value
+description TEXT DEFAULT NULL,  -- DEFAULT NULL
+INDEX idx_name (name)            -- CREATE INDEX
+);</pre>
 
                         <h5>Operators</h5>
                         <ol>
@@ -124,24 +132,40 @@
                         <p>DDL --> Data Definition Language</p>
                         <ul>
                             <li>create</li>
+                            <p>CREATE TABLE TABLE_NAME</p>
                             <li>alter</li>
+                            <p>ALTER TABLE TABLE_NAME WHERE (CONDITION)</p>
                             <li>drop</li>
+                            <p>DROP TABLE TABLE_NAME</p>
                             <li>truncate</li>
+                            <p>TRUNCATE TABLE TABLE_NAME</p>
+                            <P>Truncate delete the data along with constraints, delete only delete the data.</p>
                             <li>rename</li>
+                            <p>RENAME TABLE TABLE_NAME TO NEW_TABLE_NAME</p>
                         </ul>
                         <p>DML --> Data Manipulation Language</p>
                         <ul>
                             <li>insert</li>
+                            <p>INSERT INTO TABLE_NAME(COLS) VALUES(...)</p>
                             <li>delete</li>
+                            <p>DELETE FROM TABLE_NAME WHERE (CONDITION)</p>
                             <li>update</li>
+                            <p>UPDATE TABLE_NAME SET COLS = VALUES WHERE (CONDITION)</p>
                         </ul>
                         <p>TCL --> Transaction Control Language</p>
                         <ul>
                             <li>commit</li>
                             <li>savepoint</li>
                             <li>rollback</li>
-                            <li>set Transaction</li>
+                            <li>set AUTOCOMMIT = 0</li>
                         </ul>
+                        <pre>SET AUTOCOMMIT = 0;
+INSERT INTO employees (employee_id, name, department) VALUES (1, 'Alice', 'HR');
+INSERT INTO employees (employee_id, name, department) VALUES (2, 'Bob', 'Engineering');
+SAVEPOINT sp1;
+INSERT INTO employees (employee_id, name, department) VALUES (3, 'Charlie', 'Marketing');
+ROLLBACK TO SAVEPOINT sp1;
+COMMIT;</pre>
                         <p>DQl --> Data Query Language</p>
                         <ul>
                             <li>select</li>
@@ -160,6 +184,7 @@
                             <li>Candidate Key</li>
                             <li>Composite Key</li>
                             <li>Alternate Key</li>
+                            <li>unique key</li>
                         </ul>
                     </section>
                 </div>
@@ -170,11 +195,35 @@
                         <p></p>
                         <ul>
                             <li>1NF (First Normal Form)</li>
+                            <ul>
+                                <li>the table must have only one row per unique combination of values</li>
+                                <li>the rows must contains only single value</li>
+                            </ul>
                             <li>2NF (Second Normal Form)</li>
+                            <ul>
+                                <li>It must be in 1NF</li>
+                                <li>All the non-prime attributes must depend on the prime attribute (primary key). It is partial dependency</li>
+                            </ul>
                             <li>3NF (Third Normal Form)</li>
+                            <ul>
+                                <li>It must be in 2NF</li>
+                                <li>All the non-prime attributes depends on non- prime attribute and the prime. It is Transitive dependency like A --> B --> C. that means A -->C</li>
+                            </ul>
                             <li>BCNF (Boyce-Codd Normal Form)</li>
+                            <ul>
+                                <li>It must be in 3NF</li>
+                                <li>It is Functional Dependency X(Y)</li>
+                            </ul>
                             <li>4NF (Fourth Normal Form)</li>
+                            <ul>
+                                <li>It must be in 3NF</li>
+                                <li>Eliminate multi-valued dependencies by separating them into distinct tables.</li>
+                            </ul>
                             <li>5NF (Fifth Normal Form)</li>
+                            <ul>
+                                <li>It must be in 4NF</li>
+                                <li>It is free from join dependencies.</li>
+                            </ul>
                         </ul>
                         
                     </section>
@@ -187,10 +236,15 @@
                             <li>String Functions</li>
                             <ol>
                                 <li>sum</li>
+                                <p>SELECT sum(column_name) FROM table_name</p>
                                 <li>count</li>
+                                <p>SELECT count(column_name) FROM table_name</p>
                                 <li>avg</li>
+                                <p>SELECT avg(column_name) FROM table_name</p>
                                 <li>max</li>
+                                <p>SELECT max(column_name) FROM table_name</p>
                                 <li>min</li>
+                                <p>SELECT min(column_name) FROM table_name</p>
                             </ol>
                             <li>Numeric Functions</li>
                             <ol>
@@ -215,20 +269,32 @@
                         <p>Used to joins two or more tables</p>
                         <ol>
                             <li>INNER JOIN</li>
+                            <p>SELECT column_names FROM table1 INNER JOIN table2 ON table1.column_name =  table2.column_name</p>
                             <li>LEFT JOIN</li>
+                            <p>SELECT column_names FROM table1 LEFT JOIN table2 ON table1.column_name =  table2.column_name</p>
                             <li>RIGHT JOIN</li>
+                            <p>SELECT column_names FROM table1 RIGHT JOIN table2 ON table1.column_name =  table2.column_name</p>
                             <li>FULL JOIN</li>
+                            <p>SELECT column_names FROM table1 FULL JOIN table2 ON table1.column_name =  table2.column_name</p>
                             <li>CROSS JOIN</li>
+                            <p>SELECT column_name FROM table1 CROSS JOIN table2</p>
                             <li>NATURAL JOIN</li>
+                            <p>SELECT column_name FROM table1 NATURAL JOIN table2</p>
                             <li>SELF JOIN</li>
+                            <p>SELECT A.column_name, B.column_name FROM table1 A, table2 B ON A.column_name =  B.column_name</p>
                         </ol>
                         <h2>Aggregate FUnctions</h2><hr>
                         <ul>
-                            <li>SUM</li>
-                            <li>AVG</li>
-                            <li>COUNT</li>
-                            <li>MAX</li>
-                            <li>MIN</li>        
+                            <li>sum</li>
+                                <p>SELECT sum(column_name) FROM table_name</p>
+                            <li>count</li>
+                                <p>SELECT count(column_name) FROM table_name</p>
+                            <li>avg</li>
+                                <p>SELECT avg(column_name) FROM table_name</p>
+                            <li>max</li>
+                                <p>SELECT max(column_name) FROM table_name</p>
+                            <li>min</li>
+                                <p>SELECT min(column_name) FROM table_name</p>     
                         </ul>
                     </section>
                 </div>
@@ -237,34 +303,34 @@
                     <section id="Operators">
                         <h2>Operators</h2><hr>
                         <h5>and</h5>
-                        <p></p>
+                        <p>sELECT column_name FROM table_name WHERE column_name >10 AND column_name < 100</p>
 
                         <h5>or</h5>
-                        <p></p>
+                        <p>SELECT column_name FROM table_name WHERE column_name > 10 OR column_name < 100</p>
 
                         <h5>not</h5>
-                        <p></p>
+                        <p>SELECT column_name FROM table_name WHERE NOT column_name > 10</p>
 
                         <h5>is null</h5>
-                        <p></p>
+                        <p>SELECT column_name FROM table_name WHERE column_name IS NULL</p>
 
                         <h5>between</h5>
-                        <p></p>
+                        <p>SELECT column_name FROM table_name WHERE column_name BETWEEN 10 AND 100</p>
 
                         <h5>like</h5>
-                        <p></p>
+                        <p>SELECT column_name FROM table_name WHERE column_name LIKE '%abc%'</p>
 
                         <h5>in</h5>
-                        <p></p>
+                        <p>SELECT column_name FROM table_name WHERE column_name IN (10, 20, 30)</p>
 
                         <h5>exists</h5>
-                        <p></p>
+                        <p>SELECT column_name FROM table_name WHERE EXISTS (SELECT column_name FROM table_name)</p>
 
                         <h5>all</h5>
-                        <p></p>
+                        <p>SELECT column_name FROM table_name WHERE column_name < ALL (SELECT column_name FROM table_name)</p>
 
                         <h5>any</h5>
-                        <p></p>
+                        <p>SELECT column_name FROM table_name WHERE column_name < ANY (SELECT column_name FROM table_name)</p>
                     </section>
                 </div>
 
@@ -272,56 +338,54 @@
                     <section id="Clauses">
                         <h2>Clauses</h2><hr>
                         <h5>limit</h5>
-                        <p></p>
+                        <p>SELECT column_name FROM table_name LIMIT (0,10) </p>
 
                         <h5>null</h5>
-                        <p></p>
+                        <p>SELECT column_name FROM table_name WHERE column_name IS NULL</p>
 
                         <h5>distinct</h5>
-                        <p></p>
+                        <p>SELECT DISTINCT column_name FROM table_name</p>
 
                         <h5>order by</h5>
-                        <p></p>
+                        <p>SELECT column_name FROM table_name ORDER BY column_name ASC/DESC</p>
 
                         <h5>group by</h5>
-                        <p></p>
+                        <p>SELECT column_name FROM table_name GROUP BY column_name</p>
 
                         <h5>having</h5>
-                        <p></p>
+                        <p>SELECT column_name FROM table_name GROUP BY column_name HAVING column_name > 10</p>
 
                         <h5>where</h5>
-                        <p></p>
+                        <p>SELECT column_name FROM table_name WHERE column_name > 10</p>
                     </section>
                 </div>
 
                 <div class="content">
                     <section id="Sub-query">
                         <h2>Sub Queries</h2>
-                        <p>Content for String Handling...</p>
+                        <p>Queries nested inside other queries</p>
+                        <pre>SELECT * FROM table_name WHERE column_name = (SELECT column_name FROM table_name)</pre>
                     </section>
                 </div>
 
                 <div class="content">
-                    <section id="file-handling">
-                        <h2>File Handling</h2>
-                        <p>Content for File Handling...</p>
+                    <section id="view">
+                        <h2>View</h2>
+                        <p>it is a Virtual table based on the result-set of SQL statement</p>
+                        <pre>CREATE VIEW view_name AS SELECT column_name FROM table_name WHERE (condition)</pre><p>Calling: SELECT * FROM view_name</p>
+                        <h2>Set Operations</h2>
+                        <ul>
+                            <li>UNION</li>
+                            <p>SELECT * FROM table1_name UNION (SELECT * FROM table2_name) --> adds two tables without duplicates</p>
+                            <li>UNION ALL</li>
+                            <p>SELECT * FROM table1_name UNION ALL (SELECT * FROM table2_name) --> adds two tables with duplicates</p>
+                            <li>INTERSECT</li>
+                            <p>SELECT * FROM table1_name INTERSECT (SELECT * FROM table2_name) --> adds two tables without duplicates</p>
+                            <li>MINUS</li>
+                            <p>SELECT * FROM table1_name MINUS (SELECT * FROM table2_name) --> removes duplicates from table2 _name refering to table1_name</p>
+                        </ul>
                     </section>
                 </div>
-
-                <div class="content">
-                    <section id="exception-handling">
-                        <h2>Exception Handling</h2>
-                        <p>Content for Exception Handling...</p>
-                    </section>
-                </div>
-
-                <div class="content">
-                    <section id="collections">
-                        <h2>Collections</h2>
-                        <p>Content for Collections...</p>
-                    </section>
-                </div>
-
             </div>
         </div>
         <button id="backToTop" class="btn btn-primary" aria-label="Back to top">
