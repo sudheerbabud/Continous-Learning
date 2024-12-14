@@ -28,10 +28,10 @@
                     <li class="nav-item"><a class="nav-link" href="#introduction">Introduction</a></li>
                     <li class="nav-item"><a class="nav-link" href="#JDBC">JDBC - Architecture</a></li>
                     <li class="nav-item"><a class="nav-link" href="#program">Program on JDBC</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#data-types">Data Types</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#literals-methods">Literals, Types of Methods</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#onstructor">Constructor</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#big-int">BigInteger, BigDecimal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servlets">Servlets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#project">Project</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#single">Singleton Design Pattern</a></li>
+                    
                 </ul>
             </div>
             
@@ -202,38 +202,158 @@ class StudentData implements StudentInterface{
                 </div>
                 
                 <div class="content">
-                    <section id="data-types">
-                        <h2>Data Types</h2><hr>
-                        
+                    <section id="servlets">
+                        <h2>Servlets</h2><hr>
+                        <ul>
+                            <li>A server which responds to requests from a client.</li>
+                            <li>Server-side programming used to create a web application.</li>
+                            <li>Servlet is an API.</li>
+                            <li>Servlets provides predefined classes and interfaces.</li>
+                            <li>Servlet is an interface</li>
+                            <li>Servlet extends the abilities of servers.</li>
+                            <li>Servlets accepts the client requests and gives the response to client</li>
+                            <li>Servlet is a web component</li>
+                            <li>Servlets are deployed on the server.</li>
+                        </ul>
+
+                        <h5>Servlets Advantages</h5>
+                        <ul>
+                            <li>Better Performance</li>
+                            <li>Portability</li>
+                            <li>Roubust</li>
+                            <li>Secure</li>
+                        </ul>
+
+                        <h5>Servlet classes and interfaces</h5>
+                        <p>Interfaces in javax.servlet package → below 17 version</p>
+                        <ul>
+                            <li>Servlet</li>
+                            <li>ServletRequest</li>
+                            <li>ServletResponse</li>
+                            <li>ServletConfig</li>
+                            <li>ServletContext</li>
+                            <li>SingleThreadModel</li>
+                            <li>RequestDispatcher</li>
+                            <li>ServletRequestListener</li>
+                            <li>ServletRequestAttributeListener</li>
+                            <li>ServeltContextListener</li>
+                            <li>ServletContextAttributeListener</li>
+                            <li>Filter</li>
+                            <li>FilterConfig</li>
+                            <li>FilterChain</li>
+                        </ul>
+
+                        <p>Classes in javax.servlet package → below 17 version</p>
+                        <ul>
+                            <li>GenericServlet</li>
+                            <li>ServletInputStream</li>
+                            <li>ServletOutputStream</li>
+                            <li>ServletException</li>
+                            <li>ServletRequestWrapper</li>
+                            <li>ServletRequestEvent</li>
+                            <li>ServeltResponseWrapper</li>
+                            <li>ServletContextEvent</li>
+                            <li>ServletRequestAttributeEvent</li>
+                            <li>ServletContextAttributeEvent</li>
+                            <li>UnavailableException</li>
+                        </ul>
+
+                        <p>Interfaces in javax.servlet.http package  → below 17 version</p>
+                        <ul>
+                            <li>HttpSession</li>
+                            <li>HttpServletRequest</li>
+                            <li>HttpServletResponse</li>
+                            <li>HttpSessionAttributeListener</li>
+                            <li>HttpSessionListener</li>
+                            <li>HttpSessionBindingListener</li>
+                            <li>HttpSessionActivationListener</li>
+                            <li>HttpSessionContext</li>
+                        </ul>
+
+                        <p>Classes in javax.servlet.http package  → below 17 version</p>
+                        <ul>
+                            <li>HttpServlet</li>
+                            <li>Cookie</li>
+                            <li>HttpSessionEvent</li>
+                            <li>HttpSessionBindingEvent</li>
+                            <li>HttpServletRequestWrapper</li>
+                            <li>HttpServletResponseWrapper</li>
+                            <li>HttpUtils</li>
+                        </ul>
                     </section>
                 </div>
 
                 <div class="content">
-                    <section id="literals-methods">
-                        <h2>Literals </h2><hr>
-                        
+                    <section id="project">
+                        <h2>Project </h2><hr>
+                        <p>It has four stages :</p>
+                        <ul>
+                            <li>Frontend layer : HTML, CSS, JavaScript</li>
+                            <li>Controller : Servlets</li>
+                            <li>Data Access Layer : Mdoel, DAO, Interface</li>
+                            <li>Database : Database Connection</li>
+                        </ul>
                     </section>
                 </div>
 
                 <div class="content">
-                    <section id="constructor">
-                        <h2>Constructor</h2><hr>
-                        
-                    </section>
-                </div>
+                    <section id="single">
+                        <h2>Singleton Design Pattern </h2><hr>
+                        <p>Singleton - one instance or object for a class</p>
+                        <p>Pattern Types</p>
+                        <ul>
+                            <li>Early Instantiation</li>
+                            <li>Lazy Instantiation</li>
+                        </ul>
 
-                <div class="content">
-                    <section id="big-int">
-                        <h2>Constructor</h2><hr>
-                    </section>
-                </div>
+                        <p>Single Design Pattern consists of</p>
+                        <ul>
+                            <li>static data</li>
+                            <li>static method</li>
+                            <li>private constructor</li>
+                        </ul>
 
-                <div class="content">
-                    <section id="arrays">
-                        <h2>Arrays</h2><hr>
-                      
+                        <h5>Early Instantiation</h5>
+                        <ul>
+                            <li>We are creating the object before the request.</li>
+                            <li><code>private static final Employee e = new Employee();</code></li>
+                        </ul>
+
+                        <h5>Lazy Instantiation</h5>
+                        <ul>
+                            <li>We are creating the object after one request.</li>
+                            <ul>
+                                <li>We must response to that request</li>
+                            </ul>
+                            <li>We are creating the object after more requests.</li>
+                            <ul>
+                                <li>We must response to that request based on any logic like first came or other. by using synchronized keyword</li>
+                            </ul>
+                        </ul>
+                        <pre>public static Employee getEmployee(){
+    if (e == null){										
+        synchronized(Singleton.class){										
+        if (e == null){										
+            e = new Singleton();									
+        }										
+    }										
+}										
+return e;										
+}</pre>
+
+                        <h5>HTTP Requests --> Methods --> Description</h5><hr>
+                        <ul>
+                            <li>GET --> doGet --> Getting the data/ requesting the data from the requested URL.</li>
+                            <li>POST --> doPost --> Posting the data to URL or server with the body of data.</li>
+                            <li>HEAD --> doHead --> doHead	Similar like GET but without body.</li>
+                            <li>TRACE --> doTrace --> doTrace	for testing.</li>
+                            <li>PUT --> doPut --> Contains body of data to update on the requested URL.</li>
+                            <li>DELETE --> doDelete --> to delete the data from the requested URL.</li>
+                            <li>OPTIONS --> doOptions --> List of the HTTP methods at the request URL can respond.</li>
+                        </ul>
                     </section>
                 </div>
+                <!------>
             </div>
         </div>
         <button id="backToTop" class="btn btn-primary" aria-label="Back to top">
