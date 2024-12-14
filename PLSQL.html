@@ -104,7 +104,7 @@ BEGIN
     select * into en from emp where en0 =7766;
 END
                             
-Call `new_procedure`(x)</pre>
+Call `new_procedure`(x)</pre> <p>calling: call new_procedure(7839)</p>
                         <h6>Example: OUT</h6>
                         <pre>CREATE DEFINER=`root`@`localhost` PROCEDURE `new_procedure`(out en int)
 BEGIN
@@ -112,14 +112,17 @@ BEGIN
 END
                             
 Call `new_procedure`(@en)
-Select @en;</pre>       <h6>Example: IN/OUT</h6>
+Select @en;</pre>       <p>calling: call new_procedure(@val); select @val;</p>
+                        <h6>Example: IN/OUT</h6>
                         <pre>CREATE DEFINER=`root`@`localhost` PROCEDURE `new_procedure`(in eno int, out en int)
 BEGIN
     select sal into en from emp where empno= eno;
 END
                             
 Call `new_procedure`(7839, @en)
-Select @en;</pre>   <h6>Example: INOUT</h6>
+Select @en;</pre>   
+                    <p>calling: call new_procedure(7839, @val); select @val;</p>
+                    <h6>Example: INOUT</h6>
                      <pre>CREATE DEFINER=`root`@`localhost` PROCEDURE `new_procedure`(inout result int)
 BEGIN
     Set result = result +10;
@@ -127,8 +130,9 @@ END
                         
 Set @value = 78;
 Call `new_procedure`(@value)
-Select @value;
-                        </pre>   
+Select @value;</pre> 
+                        <p>calling: select @val = 10; call new_procedure(@val); select @val;</p>
+
                     </section>
                 </div>
 
@@ -136,16 +140,22 @@ Select @value;
                     <section id="Functions">
                         <h2>Functions</h2><hr>
                         <p>A function is same as a procedure except that it returns a value.</p>
+                        <p> A function doesn't have modes for parameters. it must be deterministic.</p>
                         <h5>Creating a function</h5>
-                        <pre>CREATE [OR REPLACE] FUNCTION function_name 
-[(parameter_name [IN | OUT | IN OUT] type [, ...])] 
+                        <pre>CREATE FUNCTION function_name()
 RETURN return_datatype 
-{IS | AS} 
 BEGIN 
  < function_body > 
-END [function_name];</pre>
+return 1;
+END</pre>
                         <h6>Example:</h6>
-                        <>
+                        <pre>CREATE DEFINER=`root`@`localhost` FUNCTION `fun3`(a int) RETURNS int
+DETERMINISTIC
+BEGIN
+    set a = a + 10;
+RETURN a;
+END</pre>
+                        <p>calling: select deptno, fun3(10) from emp;</p>
                     </section>
                 </div>
 
@@ -153,17 +163,30 @@ END [function_name];</pre>
                     <section id="Triggers">
                         <h2>Triggers</h2>
                         <p> Triggers are stored programs, which are automatically executed or fired when some events occur.</p>
+                        <p>Triggers are two types. 1) row level triggers 2) statement level triggers.. In PLSQL we have only row level triggers. </p>
                         <h5>Creating a trigger</h5>
-                        <pre>CREATE [OR REPLACE] FUNCTION function_name 
-[(parameter_name [IN | OUT | IN OUT] type [, ...])] 
-RETURN return_datatype 
-{IS | AS} 
+                        <pre>$$ Delimiter
+CREATE TRIGGER Trigger_name 
+before/after insert/update/delete on table_name
+for each row
 BEGIN 
  < function_body > 
-END [function_name];</pre>
+END $$</pre>
                         <h6>Example:</h6>
-                        <>
-                    
+                        <p>Before this we have to crete the table for trigger data.</p>
+                        <pre>CREATE TABLE Audit (
+sno int auto_increment primary key,
+deptno int,
+currentdate date
+);</pre>
+                        <pre>$$ Delimiter
+CREATE TRIGGER Trig 
+before insert on deptno
+for each row
+BEGIN 
+    insert into Audit (deptno, currentdate) values (NEW.deptno, current_date());
+END $$</pre>
+                        <p>calling: we must insert the data in deptno table, then trigger will automatically insert the data in audit table.</p>
                     </section>
                 </div>
 
@@ -173,8 +196,47 @@ END [function_name];</pre>
                         <ul>
                             <li>if then</li>
                             <li>if then else</li>
-                            <li>if then elsif else</li>
-                            <li>case when</li>
+                            <li>if then elsif else --> by using storage procedure</li>
+                            <pre>CREATE DEFINER=`root`@`localhost` PROCEDURE `ifelse1`(in d int, out x varchar(30))
+BEGIN
+    if d = 10 then
+        select * from emp where deptno = d;
+        select max(sal) into x from emp where deptno = d;
+    else if d = 20 then
+        select * from emp where deptno = d;
+        select max(sal) into x from emp where deptno = d;
+        else if d = 30 then
+            select * from emp where deptno = d;
+            select max(sal) into x from emp where deptno = d;
+            else if d = 40 then
+                set x = "No employess in this dept";
+                else 
+                    set x = "Invalid input";
+                end if;
+            end if;
+        end if;
+    end if;
+END</pre>                   <p>calling: call ifelse1(10,@val); select @val;</p>
+                            <li>Switch case --> by using storage procedure</li>
+                            <pre>CREATE DEFINER=`root`@`localhost` PROCEDURE `case2`(in dno int, out info varchar(30))
+BEGIN
+    case dno 
+        when 10 then
+            select * from emp where deptno = dno;
+            select max(sal) into info from emp where deptno = dno;
+        when 20 then 
+            select * from emp where deptno = dno;
+            select max(sal) into info from emp where deptno = dno;
+        when 30 then 
+            select * from emp where deptno = dno;
+            select max(sal) into info from emp where deptno = dno;
+        when 40 then 
+            select * from emp where deptno = dno;
+            set info = "No employees in dept";
+        else
+            set info = "Invalid input"; 
+    end case;
+END</pre>                <p>calling: call case2(10,@val); select @val;</p>
                         </ul>
                     </section>
                 </div>
@@ -182,28 +244,74 @@ END [function_name];</pre>
                 <div class="content">
                     <section id="Loops">
                         <h2>Loops</h2><hr>
-                        <p>for loop</p>
+                        <ul>
+                            <li>for loop --> by using storage procedure</li>
+                            <pre>CREATE DEFINER=`root`@`localhost` PROCEDURE `loop2`(in n int, out result int)
+BEGIN
+    declare sum int default 0;
+    declare num int default 1;
+    nat_sum:loop
+        set sum =sum + num;
+        set num = num + 1;
+        if num = n then
+            set result =  sum;
+            leave nat_sum;
+        end if;
+    end loop;
+END</pre>                   <p>calling: call loop2(10,@val); select @val;</p>
+                            <li>while --> by using function</li>
+                            <pre>CREATE DEFINER=`root`@`localhost` FUNCTION `fun5`(in n int, out result int) returns int
+DETERMINISTIC
+BEGIN
+    declare sum int default 0;
+    declare num int default 1;
+    nat_sum:while num <= n do
+        set sum =sum + num;
+        set num = num + 1;
+        end while;
+    return sum;
+    end loop;
+END</pre>                   <p>calling: call loop2(10,@val); select @val;</p>
+                            <p>In while the loop runs until we get false</p>
+                            <li>repeat -->  by using function</li>
+                            <pre>CREATE DEFINER=`root`@`localhost` FUNCTION `repet`(d int) RETURNS int
+DETERMINISTIC
+BEGIN
+    declare num int default 100;
+    declare sum int default 0;
+    addd: repeat
+        set sum = sum + num;
+        set num = num + 1;
+        until num>=d
+    end repeat;
+RETURN sum;
+END</pre>               <p>Calling: select repet(120);</p>
+\end{itemize}           <p>In repeat the loop runs until we get true</p>
+                        </ul>
                     </section>
                 </div>
 
                 <div class="content">
-                    <section id="access-modifiers">
-                        <h2>Access Modifiers</h2>
-                        <p>Content for Access Modifiers...</p>
-                    </section>
-                </div>
-
-                <div class="content">
-                    <section id="oops">
-                        <h2>Object-Oriented Programming (OOP)</h2>
-                        <p>Content for OOP...</p>
-                    </section>
-                </div>
-
-                <div class="content">
-                    <section id="string-handling">
-                        <h2>String Handling</h2>
-                        <p>Content for String Handling...</p>
+                    <section id="cursors">
+                        <h2>Cursors</h2><hr>
+                        <p>Cursors are used to handle and process rows retrieved from a query. They act as pointers that allow you to iterate over query result sets row by row.</p>
+                        <pre>CREATE DEFINER=`root`@`localhost` PROCEDURE `cursors`(out joblist varchar(300))
+BEGIN
+    declare completed boolean default false;
+    declare j varchar(30) default "";
+    declare cur cursor for select job from emp;
+    declare continue handler for not found set completed = true;
+    set joblist = '';
+        open cur;
+            fetch_joblist:loop
+                fetch cur into j;
+                if completed = true then
+                    set joblist = concat(j,";",joblist);
+                        leave fetch_joblist;
+                    end if;
+            end loop;
+        close cur;
+END</pre>           <p>Calling: call cursors(@ha); select @ha;</p>
                     </section>
                 </div>
             </div>
