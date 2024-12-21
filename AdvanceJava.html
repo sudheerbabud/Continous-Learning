@@ -31,7 +31,8 @@
                     <li class="nav-item"><a class="nav-link" href="#servlets">Servlets</a></li>
                     <li class="nav-item"><a class="nav-link" href="#project">Project</a></li>
                     <li class="nav-item"><a class="nav-link" href="#single">Singleton Design Pattern</a></li>
-                    
+                    <li class="nav-item"><a class="nav-link" href="#jsp">JSP</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#jsp-tag">JSP</a></li>
                 </ul>
             </div>
             
@@ -280,6 +281,13 @@ class StudentData implements StudentInterface{
                             <li>HttpServletResponseWrapper</li>
                             <li>HttpUtils</li>
                         </ul>
+
+                        <h5>Servlet Life Cycle</h5>
+                        <ol>
+                            <li>Instantiation</li>
+                            <li>Service</li>
+                            <li>Destroy</li>
+                        </ol>
                     </section>
                 </div>
 
@@ -292,6 +300,37 @@ class StudentData implements StudentInterface{
                             <li>Controller : Servlets</li>
                             <li>Data Access Layer : Mdoel, DAO, Interface</li>
                             <li>Database : Database Connection</li>
+                        </ul>
+                        <h5>Files need to be created for doing operations like Insert, Update, delete, Select</h5>
+                        <ul>
+                            <li>JSP Pages</li>
+                            <ul type="disc">
+                                <li>index.jsp</li>
+                                <li>login.jsp</li>
+                                <li>Home.jsp</li>
+                                <li>Details.jsp</li>
+                                <li>Update.jsp</li>
+                                <li>Success.jsp</li>
+                            </ul>
+                            <li>Controllers (Servlets)</li>
+                            <ul  type="disc">
+                                <li>IndexController</li>
+                                <li>LoginController</li>
+                                <li>UpdateController</li>
+                            </ul>
+                            <li>Model</li>
+                            <ul  type="disc">
+                                <li>Model</li>
+                                <li>LoginModel</li>
+                            </ul>
+                            <li>Documnet Object Model</li>
+                            <ul  type="disc">
+                                <li>DAO --> Methods will be created here</li>
+                            </ul>
+                            <li>DatabaseConnection</li>
+                            <ul  type="disc">
+                                <li>Connection</li>
+                            </ul>
                         </ul>
                     </section>
                 </div>
@@ -351,6 +390,119 @@ return e;
                             <li>DELETE --> doDelete --> to delete the data from the requested URL.</li>
                             <li>OPTIONS --> doOptions --> List of the HTTP methods at the request URL can respond.</li>
                         </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="jsp">
+                        <h2>Java Server Page</h2><hr>
+                        <ul>
+                            <li>JSP stands for <code>Java Server Page.</code></li>
+                            <li>It is a technology for the development of dynamic web pages.</li>
+                           <li>It is a combination of HTML and Java code.</li>
+                           <li>It is used to separate the presentation layer from the business logic layer.</li>
+                        </ul>
+
+                        <h3>JSP Tags</h3><hr>
+                        <ol>
+                            <li>Scripting Tags</li>
+                            <li>Directives Tags</li>
+                            <li>Actions Tags</li>
+                            <li>Custom Tags</li>
+                        </ol>
+
+                        <h3>JSP Life Cycle</h3><hr>
+                        <p>There are 7 phases in JSP life cycle:</p>
+                        <ol>
+                            <li>Page Translation --> The JSP page is parsed and a Java file containing the corresponding Servlet is created.</li>
+                            <li>Compilation --> The Java file is compiled into a class file.</li>
+                            <li>Load class:- The compiled Servlet class is loaded.
+                            <li>Instantiation:- An instance of the Servlet class is created.</li>
+                            <li> Call jspInit():- This method is called before any other method to allow initialization. It is called only once.</li>
+                            <li>Call _jspService():- This method is called for each request.</li>
+                            <li> Call jspDestroy():- This method is called when the Servlet container decides to take the Servlet out of service. It is called only once.</li>
+                        </ol>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="jsp-tag">
+                        <h2>JSP Tags</h2><hr>
+                        <ol>
+                            <li>Scripting Tags</li>
+                            <ul type="disc">
+                                <li>Expression Tag --> <code>&lt;%=  code here  %&gt;</code></li>
+                                <li>Declaration Tag --> <code>&lt;%!  code here  %&gt;</code></li>
+                                <li>Scriptlet Tag --> <code>&lt;%  code here  %&gt;</code></li>
+                            </ul>
+                            <li>Directive Tags</li>
+                            <ul type="disc">
+                                <li>Page Tag </li>
+                                <ul>
+                                    <li>Provides instructions to web container which are relevant to current JSP. </li>
+                                    <li>It specifies the page specific attributes.</li>
+                                    <li><code><%@ page import="java.io.* %>	</code></li>
+                                    <li><code><%@ page contentType=application/msword %> </code></li>
+                                </ul>
+                                
+                                <li>Include Tag </li>
+                                <ul>
+                                    <li>Location can be hidden from direct user interaction.</li>
+                                    <li>File extension does not matter because resource is copied into generated servlet before compilation.</li>
+                                    <li>Must be a file from local machine.</li>
+                                    <li>To combine or include the content of other resource into the current JSP page.</li>
+                                    <li>Another resource can be JSP, HTML or a text file. code reusability.</li>
+                                    <li><code><%@ include file="header.html" %></code></li>
+                                    <li><code><%@ include file="/WEB-INF/jsp-inc/header.jsp" %></code></li>
+                                </ul>
+                                <li>Taglib Tag </li>
+                                <ul>
+                                    <li>To define a tag library that defines many tags.</li>
+                                    <li><code><@% taglib uri="tld-loc" prefix="pfx" %></code></li>
+                                    <li>taglib-uri - path identifier used in JSP taglib directive.</li>
+                                    <li>taglib-location - context-relative location of tld.	</li>
+                                </ul>
+                            </ul>
+                            <li>Action Tags</li>
+                            <ul type="disc">
+                                <li>JSP specification provides the action tags to control:			
+                                    Behaviour of the servlet engine, 			
+                                    Control page flow			
+                                    Dynamically insert a file			
+                                    Reuse JavaBeans components etc. </li>
+                                <li><code>jsp:actionName attributeName="attributeValue"/</code></li>
+                                <li>jsp:include: combine resources at runtime.</li>
+                                <li> jsp:forward: conditionally display a page</li>
+                                <li> jsp:param: pass arguments  HTML forms (used with forward and include).</li>
+                                <li> jsp:plugin: write/ combines code for applets.</li>
+                                <li>jsp:setProperty:sets bean value of property.</li>
+                                <li>jsp:getProperty: gets bean value of property.</li>
+                            </ul>
+                            <li>Custom Tags</li>
+                            <ul type="disc">
+                                <li>Custom tags are user-defined action tags. </li>
+                                <li>A tag handler is associated with each tag for implementing the operations. </li>
+                                <li><code>prefix : suffix attribute = "value"/></code></li>
+                            </ul>
+                        </ol>
+
+                        <p>Page Directive  Attributes</p>
+                                    <ul>
+                                        <li>Import → To import interface, classes or packages</li>
+                                        <li>Session → For checking whether JSP page is in HTTP session or not.  It can have true or false value.</li>
+                                        <li>Buffer →  For defining the buffer size.</li>
+                                        <li>Autoflush → Controls the performance of the buffer.	</li>
+                                        <li>contentType</li>
+                                        <li>isErrorPage	→ Specifies the current JSP page can be used as error page.</li>
+                                        <li>errorPage</li>
+                                        <li>isThreadSafe →  Specifies whether this page supports multithreading or not.</li>
+                                    </ul>
+                      <p>taglib Directive Attributes</p>
+                      <ul>
+                        <li>uri --> Specifies the location of the tag library.</li>
+                        <li>prefix --> Informs the web container that is used for custom actions.</li>
+                      </ul>
+                      
                     </section>
                 </div>
                 <!------>
