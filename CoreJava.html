@@ -29,7 +29,7 @@
                     <li class="nav-item"><a class="nav-link" href="#identifiers-keywords">Identifiers, Keywords</a></li>
                     <li class="nav-item"><a class="nav-link" href="#data-types">Data Types</a></li>
                     <li class="nav-item"><a class="nav-link" href="#literals-methods">Literals, Types of Methods</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#onstructor">Constructor</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#constructor">Constructor</a></li>
                     <li class="nav-item"><a class="nav-link" href="#big-int">BigInteger, BigDecimal</a></li>
                     <li class="nav-item"><a class="nav-link" href="#arrays">Arrays</a></li>
                     <li class="nav-item"><a class="nav-link" href="#access-modifiers">Access Modifiers</a></li>
@@ -573,15 +573,42 @@ Output: 0 1
 
                         <h5>Some methods of string</h5>
                         <ol>
-                            <li>length() --> returns length of string</li>
-                            <li>charAt(index) --> returns char at given index</li>
-                            <li>concat(string) --> returns new string by concatenating given string with current string</li>
-                            <li>substring(start, end) --> returns substring from given start index to end index</li>
-                            <li>replace(oldChar, newChar) --> returns new string by replacing old character with new character</li>
-                            <li>toLowerCase() --> returns new string in lowercase</li>
-                            <li>toUpperCase() --> returns new string in uppercase</li>
-                            <li>trim() --> returns new string by removing leading and trailing white spaces</li>
-                            <li></li>
+                            <li>charAt() → char --> Returns the char value at the specified index.</li>
+                            <li>codePointAt() → int --> Returns the character (ASCII Value) at the specified index.</li>
+                            <li>codePointBefore() → int --> Returns the character (Unicode code point) before the specified index.</li>
+                            <li>codePointCount() → int --> Returns the number of Unicode code points in the specified text range of this String.</li>
+                            <li>compareTo() → int --> Compares two strings lexicographically. Compares two strings in ASCII values; if not the same, it makes subtraction.</li>
+                            <li>concat() → String --> Concatenates the specified string to the end of this string.</li>
+                            <li>contains() → boolean --> Returns true if and only if this string contains the specified sequence of char values.</li>
+                            <li>equals() → boolean --> Compares two strings to check if they are equal or not, returns true or false.</li>
+                            <li>equalsIgnoreCase() → boolean --> Compares two strings, ignoring case differences.</li>
+                            <li>replace() → String --> Replaces any character or string with another one.</li>
+                            <li>replaceFirst() → String --> Replaces the first occurrence of a string with another one.</li>
+                            <li>replaceAll() → String --> Replaces all occurrences of a string with another one, can use regex.</li>
+                            <li>trim() → String --> Removes spaces before and after the string.</li>
+                            <li>split() → String[] --> Splits a sentence into words based on the delimiter.</li>
+                            <li>copyValueOf() → String --> Converts a char array to a string.</li>
+                            <li>startsWith() → boolean --> Checks whether the string starts with the specified prefix.</li>
+                            <li>endsWith() → boolean --> Checks whether the string ends with the specified suffix.</li>
+                            <li>toUpperCase() → String --> Converts the string to uppercase.</li>
+                            <li>toLowerCase() → String --> Converts the string to lowercase.</li>
+                            <li>getBytes() → byte[] --> Converts the string into an array of bytes.</li>
+                            <li>hashCode() → int --> Generates a hash code value for the string.</li>
+                            <li>indexOf() → int --> Returns the index of the first occurrence of the given character.</li>
+                            <li>indexOf(int ch, int fromIndex) → int --> Returns the index of the first occurrence of the given character after the specified index.</li>
+                            <li>lastIndexOf() → int --> Returns the index of the last occurrence of the given character.</li>
+                            <li>intern() → String --> Returns the canonical representation for the string object.</li>
+                            <li>isEmpty() → boolean --> Checks if the string is empty.</li>
+                            <li>isBlank() → boolean --> Checks if the string is empty or contains only whitespace characters.</li>
+                            <li>join() → String --> Joins words into a sentence.</li>
+                            <li>matches() → boolean --> Checks if the string matches the regular expression.</li>
+                            <li>length() → int --> Returns the length of the string.</li>
+                            <li>substring() → String --> Returns a substring from the given index onward.</li>
+                            <li>substring(beginIndex, endIndex) → String --> Returns a substring from beginIndex to endIndex, with the endIndex being exclusive.</li>
+                            <li>toCharArray() → char[] --> Converts the string into an array of characters.</li>
+                            <li>toString() → String --> Converts the object reference into a string format.</li>
+                            <li>valueOf() → String --> Converts any data type into a string.</li>
+
                         </ol>
 
                         <h5>String Buffer</h5>
@@ -589,13 +616,113 @@ Output: 0 1
 
                         <h5>String Builder</h5>
                         <p>String Builder is also mutable, but it is not synchronized. so it is not thread-safe.</p>
+
+                        <table style="border-collapse: collapse; width: 80%; margin: 20px auto; font-family: Arial, sans-serif;">
+                            <thead>
+                              <tr style="background-color: #4CAF50; color: white; text-align: left; font-size: 18px;">
+                                <th style="padding: 12px 15px;">Differences</th>
+                                <th style="padding: 12px 15px;">String</th>
+                                <th style="padding: 12px 15px;">StringBuffer</th>
+                                <th style="padding: 12px 15px;">StringBuilder</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr style="background-color: #f2f2f2;">
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">Storage</td>
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">SCP and Heap area</td>
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">Heap area</td>
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">Heap area</td>
+                              </tr>
+                              <tr>
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">Objects</td>
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">Immutable Objects</td>
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">Mutable Objects</td>
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">Mutable Objects</td>
+                              </tr>
+                              <tr style="background-color: #f2f2f2;">
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">Memory</td>
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">If we change the value of a string a lot of times, it will allocate more memory</td>
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">Consumes less memory</td>
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">Occupy less memory</td>
+                              </tr>
+                              <tr>
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">Threadsafe</td>
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">Not threadsafe</td>
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">All methods are synchronized & thus it is thread safe.</td>
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">No synchronized methods, not thread safe</td>
+                              </tr>
+                              <tr style="background-color: #f2f2f2;">
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">Performance</td>
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">Slow</td>
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">Fast as compared to String</td>
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">Fast as compared to StringBuffer</td>
+                              </tr>
+                              <tr>
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">Use</td>
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">If data is not changing frequently</td>
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">If data is changing frequently</td>
+                                <td style="padding: 12px 15px; border: 1px solid #ddd;">If data is changing frequently</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          
+                          
                     </section>
                 </div>
 
                 <div class="content">
                     <section id="file-handling">
                         <h2>File Handling</h2><hr>
-                        <p>Content for File Handling...</p>
+                        <p>Reading the file and Writing in the File and we have soem exceptions where we are doing read/write to handle those we go for file handling.</p>
+                        <h5>Methods in File Handling</h5>
+                        <p>File f= new File("path");</p>
+                        <p>FileReader fr = new FileReader(f);</p>
+                        <p>FileWriter fw = new FileWriter(f);</p>
+                        <p>BufferedReader br = new BufferedReader(f);</p>
+                        <p>BufferedWriter bw = new BufferedWriter(f);</p>
+                        <p>PrintWriter pw = new PrintWriter(f);</p>
+                        <p>In these BufferedReader and PrintWriter are best for reading and writing.</p>
+                        <ol>
+                            <li>createNewFile() → boolean --> creates a new file</li>
+                            <li>exist() → boolean --> Used to check whether the file is present or not.</li>
+                            <li>getAbsoluteFile() → File --> Gives the full path of the file like: C:\user\file.</li>
+                            <li>listFiles() → File[] --> List the total files in the folder with the full address.</li>
+                            <li>list() → String[] --> List the total files and folders with respect to address.</li>
+                            <li>isDirectory() → boolean --> Lists the folders in a file.</li>
+                            <li>getFreeSpace() → long --> Gives how much space is remaining in the file in KB.</li>
+                            <li>canRead() → boolean --> Reading the file with the path given.</li>
+                            <li>canWrite() → boolean --> Modifying the file with the path given.</li>
+                            <li>canExecute() → boolean --> Checks whether the file can be executed or not.</li>
+                            <li>BufferedWriter --> Used to print the elements in the file.</li>
+                            <li>BufferedReader --> Used to add data to the file.</li>
+                            <li>PrintWriter --> This method is used to print elements one by one in a new line.</li>
+                            <li>br.readLine() → String (Deprecated) --> Reads a line from the file. If there are no elements, it will return null.</li>
+                            <li>pw.flush() --> Refreshes and pushes the contents to the file.</li>
+                            <li>fw.write() --> Adds a single element to the file.</li>
+                            <li>fw.read() --> Reads elements from the file.</li>
+                            <li>delete() → boolean --> Deletes a file or directory. Returns true if successful, false otherwise.</li>
+                            <li>renameTo(File dest) → boolean --> Renames a file or directory to the specified destination.</li>
+                            <li>setReadable(boolean readable) → boolean --> Sets the file's writability status.</li>
+                            <li>setWritable(boolean writable) → boolean --> Sets the file's writability status.</li>
+                            <li>setExecutable(boolean executable) → boolean --> Sets the file's executable status.</li>
+                            <li>lastModified() → long --> Returns the last modification time of the file in milliseconds.</li>
+                            <li>length() → long --> Returns the size of the file in bytes.</li>
+                            <li>mkdir() → boolean --> Creates a new directory.</li>
+                            <li>mkdirs() → boolean --> Creates the directory, including any necessary but nonexistent parent directories.</li>
+                        </ol>
+
+                        <h2>serailzation</h2><hr>
+                        <p>it process of change the object state from onle place to another place.</p>
+                        <ul>
+                            <li>readObject() → Boolean --> The writeObject method is responsible for writing the state of the object for its particular class so that the corresponding readObject method can restore it.</li>
+                            <li>writeObject() → Boolean --> The writeObject method is responsible for writing the state of the object for its particular class so that the corresponding readObject method can restore it.</li>
+                            <li>ObjectInputStream() → Object --> Creates an ObjectInputStream that reads from the specified InputStream.</li>
+                            <li>ObjectOutputStream() → void --> Creates an ObjectOutputStream that writes to the specified OutputStream.</li>
+
+                            <!-- Constructors -->
+                            <li>FileInputStream(File name) --> Creates a FileInputStream by opening a connection to an actual file, the file named by the File object file in the file system.</li>
+                            <li>FileOutputStream(File name) --> Creates a file output stream to write to the file represented by the specified File object.</li>
+                        </ul>
                     </section>
                 </div>
 
@@ -990,10 +1117,50 @@ Output: {Hello=Sudheer}{Hello=Babu}</pre>
                 
                 <div class="content">
                     <section id="inner-classes">
-                        <h2>Inner Classes</h2><hr>
+                        <h2>Inner Classes</h2>
+                        <hr>
+                        <p><strong>Definition:</strong> An inner class is a class defined within another class. Inner classes have access to the members (fields and methods) of the enclosing class, including private members.</p>
                         
+                        <h3>Types of Inner Classes</h3>
+                        <ul>
+                            <li><strong>Non-static Nested Class (Inner Class):</strong> This type of inner class is associated with an instance of the outer class.</li>
+                            <li><strong>Static Nested Class:</strong> This type of inner class is a static member of the outer class and doesn't require an instance of the outer class to be instantiated.</li>
+                            <li><strong>Local Inner Class:</strong> A class defined within a method or a block of code.</li>
+                            <li><strong>Anonymous Inner Class:</strong> A type of inner class that doesn't have a name and is used to instantiate an object of a class or implement an interface.</li>
+                        </ul>
+                
+                        <h3>Example of Inner Class</h3>
+                        <pre>class OuterClass {
+private int outerField = 10;
+                            
+class InnerClass {
+    public void display() {
+        System.out.println("Outer field value: " + outerField);
+    }
+}
+                            
+public void createInnerClass() {
+    InnerClass inner = new InnerClass();
+        inner.display();
+    }
+}
+                
+public class Main {
+    public static void main(String[] args) {
+        OuterClass outer = new OuterClass();
+        outer.createInnerClass();
+    }
+}</pre>
+                        <h3>Key Points:</h3>
+                        <ul>
+                            <li>Inner classes can access members of the outer class directly.</li>
+                            <li>Non-static inner classes require an instance of the outer class to be created first.</li>
+                            <li>Static nested classes can be instantiated without an outer class object.</li>
+                            <li>Local inner classes can be defined inside methods but are not accessible outside them.</li>
+                        </ul>
                     </section>
                 </div>
+                
 
                 <div class="content">
                     <section id="multithreading">
@@ -1037,8 +1204,28 @@ Output: {Hello=Sudheer}{Hello=Babu}</pre>
                         <li>By extending the Thread class.</li>
                         <li>By Implementing the Runnable Interface.</li>
                        </ul>
+                    <h5>Thread Methods</h5>
+                    <ol>
+                        <li><strong>start() → void:</strong> Starts the execution of the thread by calling its <code>run()</code> method.</li>
+                        <li><strong>run() → void:</strong> The entry point for the thread, where the code to be executed by the thread is defined. This method should be overridden in a subclass or thread implementation.</li>
+                        <li><strong>sleep(long millis) → static void:</strong> Makes the current thread pause for the specified number of milliseconds.</li>
+                        <li><strong>interrupt() → void:</strong> Interrupts the thread's execution. If the thread is sleeping or waiting, it will throw an <code>InterruptedException</code>.</li>
+                        <li><strong>isAlive() → boolean:</strong> Checks if the thread is currently alive (i.e., if it has been started and has not yet finished).</li>
+                        <li><strong>join() → void:</strong> Makes the current thread wait until the thread on which this method was called finishes its execution.</li>
+                        <li><strong>setPriority(int newPriority) → void:</strong> Sets the priority of the thread. The priority is an integer between 1 and 10, with 10 being the highest.</li>
+                        <li><strong>getPriority() → int:</strong> Returns the priority of the thread.</li>
+                        <li><strong>getName() → String:</strong> Returns the name of the thread.</li>
+                        <li><strong>setName(String name) → void:</strong> Sets the name of the thread.</li>
+                        <li><strong>yield() → static void:</strong> Tells the currently executing thread to pause and allow other threads of the same priority to execute.</li>
+                        <li><strong>currentThread() → Thread:</strong> Returns a reference to the currently executing thread.</li>
+                        <li><strong>isDaemon() → boolean:</strong> Checks if the thread is a daemon thread. Daemon threads are low-priority threads that run in the background, usually for housekeeping tasks.</li>
+                        <li><strong>setDaemon(boolean on) → void:</strong> Sets the thread as a daemon thread or a non-daemon thread.</li>
+                        <li><strong>stop() → void:</strong> Deprecated. Stops the thread execution abruptly. It is not recommended to use this method due to potential issues like resource cleanup.</li>
+                        <li><strong>wait() → void:</strong> Causes the current thread to wait until another thread sends a notification.</li>
+                        <li><strong>notify() → void:</strong> Wakes up one thread that is waiting on this object.</li>
+                        <li><strong>notifyAll() → void:</strong> Wakes up all threads that are waiting on this object.</li>
 
-                       
+                    </ol>
                     </section>
                 </div>
 
@@ -1189,17 +1376,9 @@ public class Test1 {
     </div>
     
     <script src="script.js">
-
     </script>
-
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>    
 </body>
 </html>
-
-
-
-
