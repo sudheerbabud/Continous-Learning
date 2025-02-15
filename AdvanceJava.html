@@ -13,6 +13,46 @@
             border-left: 5px solid rgb(64, 0, 128);
             margin: 2px;
         }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Media Queries for different devices */
+        /* Small mobile (less than 480px) */
+        @media (max-width: 480px) {
+            img {
+                width: 200px;  /* Small image size for mobile */
+            }
+        }
+
+        /* Mobile landscape (480px to 767px) */
+        @media (min-width: 480px) and (max-width: 767px) {
+            img {
+                width: 300px;  /* Medium image size for mobile landscape */
+            }
+        }
+
+        /* Tablet (768px to 1023px) */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            img {
+                width: 500px;  /* Larger image size for tablet */
+            }
+        }
+
+        /* Laptop (1024px to 1366px) */
+        @media (min-width: 1024px) and (max-width: 1366px) {
+            img {
+                width: 700px;  /* Bigger image size for laptop */
+            }
+        }
+
+        /* Desktop (1367px and above) */
+        @media (min-width: 1367px) {
+            img {
+                width: 1000px;  /* Largest image size for desktop */
+            }
+        }
     </style>
 </head>
 <body>
@@ -32,7 +72,9 @@
                     <li class="nav-item"><a class="nav-link" href="#project">Project</a></li>
                     <li class="nav-item"><a class="nav-link" href="#single">Singleton Design Pattern</a></li>
                     <li class="nav-item"><a class="nav-link" href="#jsp">JSP</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#jsp-tag">JSP</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#jsp-tag">JSP Tags</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#MVC-architecture">MVC Architecture</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Projects">Projects</a></li>
                 </ul>
             </div>
             
@@ -56,8 +98,10 @@
                 <div class="content">
                     <section id="introduction">
                         <h1>Introduction of Advance Java</h1><hr>
-                        <p>Advance Java - </p>
-                       
+                        <p>Advance Java - In this we have Servlets and JSP</p>
+                        <p>Java Servlets - Servlets are Java programs that run on the server and respond to HTTP requests.</p>
+                        <p>Java Server Pages (JSP) - JSP is a server-side technology that allows developers to create dynamic web content.</p>
+                        <p>MVC --> Model View Controller</p>
                     </section>
                 </div>
 
@@ -505,6 +549,65 @@ return e;
                       
                     </section>
                 </div>
+
+                <div class="content">
+                    <section id="MVC-architecture">
+                        <h2>MVC --> Model View Controller</h2><hr>
+                        <ul>
+                            <li>Model: Represents the data and business logic.</li>
+                            <li>View: Represents the user interface.</li>
+                            <li>Controller: Handles user requests, retrieves data from the model, and updates the view.</li>
+                        </ul>
+                        <p>Servlets are used as controllers in MVC architecture.</p>
+                        
+        <h2>Model-View-Controller (MVC) Architecture</h2>
+        
+        <p><strong>MVC</strong> is a software design pattern that separates an application into three main components:</p>
+
+        <h2>1. Model</h2>
+        <ul>
+            <li>Handles business logic and data management.</li>
+            <li>Interacts with the database and processes data.</li>
+            <li>Does not depend on UI components.</li>
+        </ul>
+
+        <h2>2. View</h2>
+        <ul>
+            <li>Represents the user interface (UI).</li>
+            <li>Displays data from the Model.</li>
+            <li>Receives input from the user.</li>
+        </ul>
+
+        <h2>3. Controller</h2>
+        <ul>
+            <li>Acts as an intermediary between Model and View.</li>
+            <li>Handles user input and updates the Model & View accordingly.</li>
+            <li>Contains application logic and request handling.</li>
+        </ul>
+
+        <h2>MVC Flow Diagram</h2>
+        <p>The flow of data and interaction in MVC architecture:</p>
+        <ol>
+            <li>User interacts with the <strong>View</strong> (UI).</li>
+            <li>The <strong>Controller</strong> processes user requests.</li>
+            <li>The <strong>Model</strong> updates or fetches data.</li>
+            <li>The updated data is sent back to the <strong>View</strong>.</li>
+        </ol>
+
+        <img src="img/advance.png" id="Img"alt="Flow of MVC Architecture">
+
+        </section>
+    </div>
+
+                <div class="content">
+                    <section id="Projects">
+                        <h2>Projects</h2><hr>
+                        <p>Some of the projects built using JSP include:</p>
+                        <a href="https://github.com/sudheerbabud/Student-Database-Management-System" ><button class="btn btn-primary">Student Database Management System</button></a>
+                        <a href="https://github.com/sudheerbabud/Hospital-Management-System" ><button class="btn btn-primary">Hospital Management System</button></a>
+                    </section>
+                </div>
+                            
                 <!------>
             </div>
         </div>
