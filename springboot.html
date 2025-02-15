@@ -26,7 +26,12 @@
                 <ul class="nav flex-column">
                     <li class="nav-item"><span class="nav-link" style="color:red;font-size: 24px; font-weight: 900;">Springboot</span></li>
                     <li class="nav-item"><a class="nav-link" href="#introduction">Introduction</a></li>
-                   
+                    <li class="nav-item"><a class="nav-link" href="#anotations">Spring Boot Annotations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#JPA">Spring Boot JPA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hibernate">Hibernate</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#postmantool">Postman Tool</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#security">Spring Boot Security</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#actuator">Spring Boot Actuator</a></li>   
                 </ul>
             </div>
             
@@ -49,11 +54,118 @@
                 </div>
                 <div class="content">
                     <section id="introduction">
-                        <h1>Introduction of Springboot</h1>
-                        <p>Not yet started</p>
+                        <h1>Introduction of Springboot</h1><hr>
+                        <p>Spring Boot is advance version of Spring, where we don't have to do much configuration it has own capability to do on its own</p>
+                        <p>Spring Boot is an open-source framework that makes it easy to create stand-alone, production-ready Spring applications.</p>
+                        <p>Spring Boot provides a few key features:</p>
+                        <ul>
+                            <li>Convenient dependency management</li>
+                            <li>Embedded web servers (Tomcat, Jetty, Undertow)</li>
+                            <li>Auto-configuration for various application needs</li>
+                            <li>Starter projects for common use cases</li>
+                        </ul>
+    
                     </section>
                 </div>
 
+                <div class="content">
+                    <section id="anotations">
+                        <p><h2>Spring Boot Annotations</h2><hr>
+                            <ul>
+                                <li><strong>@SpringBootApplication</strong> – Combines @Configuration, @EnableAutoConfiguration, and @ComponentScan.</li>
+                                <li><strong>@EnableAutoConfiguration</strong> – Enables Spring Boot's auto-configuration.</li>
+                                <li><strong>@ComponentScan</strong> – Scans for Spring components automatically.</li>
+                                <li><strong>@ConfigurationProperties</strong> – Binds external properties to Java objects.</li>
+                                <li><strong>@Autowired</strong> – Injects dependencies into a bean.</li>
+                                <li><strong>@RestController</strong> – Indicates that a class is a controller that returns HTTP responses.</li>
+                                <li><strong>@RequestMapping</strong> – Maps HTTP requests to controller methods.</li>
+                                <li><strong>@GetMapping</strong> – Maps HTTP GET requests to controller methods.</li>
+                                <li><strong>@PostMapping</strong> – Maps HTTP POST requests to controller methods.</li>
+                                <li><strong>@PutMapping</strong> – Maps HTTP PUT requests to controller methods.</li>
+                                <li><strong>@DeleteMapping</strong> – Maps HTTP DELETE requests to controller methods.</li>
+                                <li><strong>@PathVariable</strong> – Extracts a value from the request path and binds it to a method parameter.</li>
+                                <li><strong>@RequestBody</strong> – Binds the request body to a method parameter.</li>
+                                <li><strong>@RequestParam</strong> – Extracts a value from the request query string and binds it to a method parameter.</li>
+                                <li><strong>@Service</strong> – Indicates that a class is a service, which is a type of Spring bean.</li>
+                                <li><strong>@Repository</strong> – Indicates that a class is a Spring data repository.</li>
+                            </ul></p>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="JPA">
+                        <h2>Spring Boot JPA</h2><hr>
+                        <p>it is a API ... JPA (Java Persistence API) is used to simplify database interactions in Java applications. 
+                            Instead of writing complex SQL queries and JDBC code, JPA allows developers to work with Java objects
+                             (entities) and let the ORM (like Hibernate) handle the database operations.
+                        </p>
+                        <p>It uses Hibernate to interact to databases</p>   
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="hibernate">
+                        <h2>Hibernate</h2><hr>
+                        <ul>
+                            <li>Hibernate is a fully functional ORM framework that implements the JPA specification.</li>
+                            <li>Hibernate uses an object-relational mapping (ORM) approach to map Java objects to relational databases.</li>
+                            <li>Hibernate provides a simple and powerful way to access and manipulate data from relational databases.</li>
+                            <li>Hibernate supports various databases, including MySQL, PostgreSQL, Oracle, and SQL Server.</li>
+                            <li>Hibernate internally uses JDBC to interact with the database.</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="postmantool">
+                        <h2>Postman Tool</h2><hr>
+                        <p>Postman tool is used to POST, GET, PUT, DELETE that means we can send the data to database create, read, update and delete them by using postman tool</p>  
+                        <ul>
+                            <li>when we have post the data to database then we use post method and we have to select body and raw and select JSON options .. Springboot uses only JSON </li>
+                            <li>when we have get the data from database then we use get method and we have to select params and select query parameters .. Springboot uses only query parameters </li>
+                            <li>when we have put the data to database then we use put method and we have to select body and raw and select JSON options .. Springboot uses only JSON </li>
+                            <li>when we have delete the data from database then we use delete method and we have to select params and select query parameters .. Springboot uses only query parameters </li>
+                        </ul> 
+
+                    <h2>Response Status Codes</h2><hr>
+                    <ul>
+                        <li>200 OK: The request was successful.</li>
+                        <li>201 Created: The request has been fulfilled and a new resource has been created.</li>
+                        <li>204 No Content: The server successfully processed the request but is not returning any content.</li>
+                        <li>400 Bad Request: The server cannot or will not process the request due to an apparent client error.</li>
+                        <li>401 Unauthorized: The request requires user authentication.</li>
+                        <li>403 Forbidden: The server understood the request but refuses to authorize it.</li>
+                        <li>404 Not Found: The server did not find the requested resource.</li>
+                        <li>500 Internal Server Error: The server encountered an unexpected condition that prevented it from fulfilling the request.</li>
+                    </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="security">
+                        <h2>Spring Boot Security</h2><hr>
+                        <p>It is a dependency that is added in the POM.XML file.</p> 
+                        <p>It is used to secure the application. Its asks the user to enter the username and password to access the application.</p>
+                        <p>By default the username is user and the password is generated in the console.</p>
+                        <p>we can change the username and password in the application.properties file.</p>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="actuator">
+                        <h2>Spring Boot Actuator</h2><hr>
+                        <p>It is a dependency that is added in the POM.XML file.</p>
+                        <p>It provides various endpoints for monitoring and managing the application.</p>
+                        <p>Some of the endpoints provided by Actuator are:</p>
+                        <ul>
+                            <li>/actuator/health</li>
+                            <li>/actuator/info</li>
+                            <li>/actuator/metrics</li>
+                            <li>/actuator/prometheus</li>
+                            <li>/actuator/auditevents</li>
+                        </ul>
+                    </section>
+                </div>
                
             </div>
         </div>
@@ -76,6 +188,7 @@
     
 </body>
 </html>
+
 
 
 
