@@ -26,7 +26,11 @@
                 <ul class="nav flex-column">
                     <li class="nav-item"><span class="nav-link" style="color:red;font-size: 24px; font-weight: 900;">spring</span></li>
                     <li class="nav-item"><a class="nav-link" href="#introduction">Introduction</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#Jvm-architecture">Spring Architecture</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#spring-architecture">Spring Architecture</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#IOC">IOC, Dependency Injection</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#anotations">Spring Annotations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Project-req">Project Requirements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Project">Spring Project</a></li>
 
                 </ul>
             </div>
@@ -76,14 +80,159 @@
                 </div>
 
                 <div class="content">
-                    <section id="Jvm-architecture">
+                    <section id="spring-architecture">
                         <h2>Spring-architecture</h2>
                         <img src="http://www.tutorialspoint.com/spring/images/spring_architecture.png" alt="Architecture" width=300px;height=300px;>
                         <p>It contains one main file for class linking ,one encapuslated class with setters and getters abd beans.xml</p>
+                        <p>Inorder to know it is spring we have pom.xml file</p>
                     </section>
                 </div>
 
-                
+                <div class="content">
+                    <section id="ioc">
+                        <h2>IOC, Dependency Injection</h2><hr>
+                        <h5>IOC stands for Inversion of Control</h5>
+                        <p>Instead of we creating the object, spring container will create the object for us.</p>
+                        <h5>Dependency Injection</h5>
+                       <p>Dependency Injection (DI) is a core concept in the Spring Framework that allows objects to be 
+                        loosely coupled by injecting their dependencies rather than creating them directly within the class. 
+                        This improves maintainability, testability, and scalability of the application.</p>
+                        <p>In Spring, we can use the following three ways to inject dependencies:</p>
+                        <ul>
+                            <li>Constructor Injection --> By using constructor</li>
+                            <li>Setter Injection --> By using setter method</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="springMVC">
+                        <h2>Spring MVC</h2><hr>
+                        <p>Spring MVC is a part of Spring Framework that provides a flexible and powerful ways to interact with Spring MVC.</p>
+                        <p>Spring MVC is a model-view-controller (MVC) framework that enables developers to build web applications by separating the application's code into distinct components.</p>
+                        <p>Spring MVC provides the following features:</p>
+                        <ul>
+                            <li>Model-View-Controller (MVC) architecture</li>
+                            <li>URL mapping</li>
+                            <li>View resolution</li>
+                            <li>Data binding</li>
+                            <li>Exception handling</li>
+                        </ul>
+                        <p>To create a Spring MVC project, follow these steps:</p>
+                        <ol>
+                            <li>Create a new Spring Boot project using the Spring Initializr.</li>
+                            <li>Add the 'Web' and 'MVC' dependencies to your pom.xml file.</li>
+                            <li>Create a controller class (e.g., HomeController.java) and define the required methods for handling HTTP requests.</li>
+                            <li>Create a view template (e.g., index.html) in the 'templates' directory.</li>
+                            <li>Define the URL mapping in the Spring Boot configuration class (e.g., WebMvcConfig.java) using the @ControllerAdvice and @RequestMapping annotations.</li>
+                        </ol>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="anotations">
+                        <h2>Spring Annotations</h2><hr>
+                        <p>Spring provides various annotations that can be used to configure and enhance the behavior of Spring components.</p>
+                        <p>Some commonly used Spring annotations include:</p>
+                        <h2>Spring Core Annotations</h2>
+                        <ul>
+                            <li><strong>@Component</strong> – Marks a class as a Spring-managed component.</li>
+                            <li><strong>@Service</strong> – Defines a service layer component.</li>
+                            <li><strong>@Repository</strong> – Marks a class as a repository (DAO layer).</li>
+                            <li><strong>@Autowired</strong> – Injects dependencies automatically.</li>
+                            <li><strong>@Qualifier</strong> – Specifies which bean to inject when multiple beans exist.</li>
+                            <li><strong>@Primary</strong> – Gives preference to a specific bean when multiple exist.</li>
+                            <li><strong>@Bean</strong> – Defines a bean in a Java configuration class.</li>
+                            <li><strong>@Configuration</strong> – Indicates a Java-based configuration class.</li>
+                            <li><strong>@PropertySource</strong> – Loads properties from external files.</li>
+                            <li><strong>@Value</strong> – Injects property values from configuration files.</li>
+                            <li><strong>@Scope</strong> – Specifies the bean scope (singleton, prototype, etc.).</li>
+                            <li><strong>@Lazy</strong> – Delays the bean initialization.</li>
+                            <li><strong>@PostConstruct</strong> – Executes a method after bean initialization.</li>
+                            <li><strong>@PreDestroy</strong> – Executes a method before bean destruction.</li>
+                        </ul>
+                    
+                        <h2>Spring MVC Annotations</h2>
+                        <ul>
+                            <li><strong>@Controller</strong> – Defines a Spring MVC controller.</li>
+                            <li><strong>@RestController</strong> – Combines @Controller and @ResponseBody for REST APIs.</li>
+                            <li><strong>@RequestMapping</strong> – Maps web requests to handler methods.</li>
+                            <li><strong>@GetMapping</strong> – Handles HTTP GET requests.</li>
+                            <li><strong>@PostMapping</strong> – Handles HTTP POST requests.</li>
+                            <li><strong>@PutMapping</strong> – Handles HTTP PUT requests.</li>
+                            <li><strong>@DeleteMapping</strong> – Handles HTTP DELETE requests.</li>
+                            <li><strong>@PatchMapping</strong> – Handles HTTP PATCH requests.</li>
+                            <li><strong>@ResponseBody</strong> – Sends data in the response instead of a view.</li>
+                            <li><strong>@RequestParam</strong> – Extracts query parameters.</li>
+                            <li><strong>@PathVariable</strong> – Extracts values from the URL path.</li>
+                            <li><strong>@RequestBody</strong> – Binds request body data to a method parameter.</li>
+                            <li><strong>@ResponseStatus</strong> – Defines the HTTP status code for a response.</li>
+                            <li><strong>@ExceptionHandler</strong> – Handles exceptions in controllers.</li>
+                        </ul>
+                    
+                        <h2>Spring Transaction Management Annotations</h2>
+                        <ul>
+                            <li><strong>@Transactional</strong> – Manages transactions automatically.</li>
+                            <li><strong>@EnableTransactionManagement</strong> – Enables Spring's transaction management.</li>
+                        </ul>
+                    
+                        <h2>Spring Scheduling & Asynchronous Execution Annotations</h2>
+                        <ul>
+                            <li><strong>@EnableScheduling</strong> – Enables scheduled tasks.</li>
+                            <li><strong>@Scheduled</strong> – Defines a scheduled task.</li>
+                            <li><strong>@Async</strong> – Enables asynchronous execution.</li>
+                            <li><strong>@EnableAsync</strong> – Enables Spring’s async processing.</li>
+                        </ul>
+                    
+                        <h2>Spring Caching Annotations</h2>
+                        <ul>
+                            <li><strong>@EnableCaching</strong> – Enables caching support.</li>
+                            <li><strong>@Cacheable</strong> – Caches the result of a method.</li>
+                            <li><strong>@CacheEvict</strong> – Removes specific cache entries.</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="Project-req">
+                        <h2>Project Requirements</h2><hr>
+                        <p>To create a web application using Spring MVC, follow these files requirements:</p>
+                        <ul>
+                            <li>pom.xml --> Maven configuration file</li>
+                            <li>web.xml --> Deployment descriptor file</li>
+                            <li>name-servlet.xml --> Main Deployment descriptor file</li>
+                            <li>Model --> Data model classes</li>
+                            <li>Controller --> Controller classes</li>
+                            <li>DAO --> Data Access Object classes</li>
+                            <li>JSP's --> View files</li>
+                        </ul>
+
+                        <p>Create a web application that allows employees to manage their personal information, such as name, email, phone number, and address. The application should have the following features:</p>
+                        <ul>
+                            <li>Create, read, update, and delete (CRUD) employees</li>
+                            <li>Search employees by name, email, or phone number</li>
+                            <li>Display employee details in a formatted manner</li>
+                            <li>Validate and sanitize input data</li>
+                            <li>Implement pagination for displaying a limited number of employees per page</li>
+                        </ul>
+                        <p>To achieve this, you can use the following technologies and frameworks:</p>
+                        <ul>
+                            <li>Java</li>
+                            <li>Spring MVC</li>
+                            <li>Spring Data JPA</li>
+                            <li>MySQL or PostgreSQL</li>
+                            <li>Bootstrap</li>
+                            <li>JSP</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="content">
+                    <section id="Project">
+                        <h2>Employee Database Management System</h2><hr>
+                        <a href="https://github.com/sudheerbabud/Employee-Database-Management-System"><button class="btn btn-primary">Click here for Project Files</button></a>
+                    </section>
+                </div>
 
             </div>
         </div>
